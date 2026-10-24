@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#653e00", "background": "#fff8f5", "on-secondary": "#ffffff", "surface-variant": "#fcddc9", "on-primary-container": "#fffbff", "tertiary-fixed": "#aff3b5", "surface-tint": "#9f4200", "surface": "#fff8f5", "on-error": "#ffffff", "on-secondary-container": "#724700", "error": "#ba1a1a", "secondary-fixed-dim": "#ffb95e", "inverse-primary": "#ffb691", "surface-bright": "#fff8f5", "tertiary-fixed-dim": "#93d69a", "surface-container-low": "#fff1e9", "on-primary-fixed-variant": "#793100", "secondary": "#855300", "error-container": "#ffdad6", "tertiary-container": "#43824e", "primary-fixed-dim": "#ffb691", "on-tertiary-fixed": "#002109", "primary": "#9b4000", "on-primary-fixed": "#341100", "surface-container": "#ffeadd", "on-error-container": "#93000a", "outline": "#8b7266", "primary-fixed": "#ffdbcb", "on-tertiary-container": "#f7fff3", "inverse-surface": "#3f2d1f", "on-background": "#28180c", "surface-container-lowest": "#ffffff", "primary-container": "#c05407", "outline-variant": "#dec0b3", "on-tertiary-fixed-variant": "#0e5224", "surface-dim": "#f3d4c1", "on-tertiary": "#ffffff", "inverse-on-surface": "#ffede3", "tertiary": "#296838", "on-surface": "#28180c", "surface-container-highest": "#fcddc9", "on-primary": "#ffffff", "on-surface-variant": "#574238", "surface-container-high": "#ffe3d1", "secondary-container": "#fdb659", "on-secondary-fixed": "#2a1700", "secondary-fixed": "#ffddb7" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-lg": "1.5rem", "margin-desktop": "2.5rem", "space-sm": "0.5rem", "space-xl": "2rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-md": "1rem" }, "fontFamily": { "display-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "metric-headline": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "metric-sub": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "metric-headline": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "metric-sub": ["16px", { "lineHeight": "20px", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(42,26,14,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="OilLoop Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1X6-DwPD8v2DkO-jDkhd_J_uOTTBKMA3rZetzavLTBEdylZJ6DAEmuIz3rC2J34Qum2jWSbxvhNlgsNLdV7fDc0o2FtTuKxFSddAntynrHzv9SFPZ4N-yV0_fzu5qJJjsmZGgOIkgkFsiIWPpu13A_VH645OpuGT5iSNNAl2Dlckl6i2kAucC79vdYrYhrKFXolpy9K3yMQRdShf_w69eGW6qZqDfjEGI_6sQAdyNk"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-lg text-label-lg text-on-surface truncate">OilLoop</span><span class="font-label-sm text-label-sm text-on-surface-variant">•</span><span class="font-label-sm text-label-sm text-primary uppercase font-bold truncate">Operations Admin</span></div><div class="flex items-center gap-1 mt-0.5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-sm text-label-sm text-tertiary truncate">Delhi NCR • Online</span></div></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><button aria-label="Switch role" class="h-11 px-2.5 rounded-lg bg-surface-container flex items-center gap-1.5 text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">swap_horiz</span><span class="font-label-sm text-label-sm text-on-surface font-semibold hidden xs:inline">Role</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full px-gutter pt-16 pb-24 bg-surface"><div class="flex flex-col w-full space-y-4">
+<!-- Control Tower Top Bar -->
+<div class="bg-surface-container-low p-4 rounded-xl shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Logistics &amp; Settlement Grid</span>
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Operations Control Tower</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-tertiary text-[14px]">my_location</span>
+          Delhi NCR Apex Hub • Central Telemetry
+        </p>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 bg-tertiary-container/20 rounded-full flex-shrink-0">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold tracking-tight">LIVE REFRESH</span>
+</div>
+</div>
+<!-- Quick Pill Nav / Filter View -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+<button class="filter-role-btn px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md flex-shrink-0 shadow-sm active:scale-95 transition-transform" data-role="all">
+        All Operations
+      </button>
+<button class="filter-role-btn px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex-shrink-0 active:scale-95 transition-transform" data-role="dispatch">
+        Pickup Dispatch (5)
+      </button>
+<button class="filter-role-btn px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex-shrink-0 active:scale-95 transition-transform" data-role="processor">
+        Processor Inward (2)
+      </button>
+<button class="filter-role-btn px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex-shrink-0 active:scale-95 transition-transform" data-role="compliance">
+        Compliance (RUCO)
+      </button>
+</div>
+</div>
+<!-- 4 High-Density KPI Cards (2x2 Grid) -->
+<div class="grid grid-cols-2 gap-3">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Today's Total</span>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[15px]">oil_barrel</span>
+</div>
+</div>
+<div class="mt-2">
+<div class="flex items-baseline gap-1">
+<span class="font-metric-headline text-metric-headline text-on-surface font-black">4,850</span>
+<span class="font-metric-sub text-metric-sub text-on-surface-variant font-semibold">kg</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span class="font-label-sm text-label-sm font-bold">+18% vs yday</span>
+</div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Field Fleet</span>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[15px]">local_shipping</span>
+</div>
+</div>
+<div class="mt-2">
+<div class="flex items-baseline gap-1">
+<span class="font-metric-headline text-metric-headline text-on-surface font-black">14</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/ 16 units</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-secondary font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm">88% Capacity active</span>
+</div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Unassigned</span>
+<div class="w-6 h-6 rounded-full bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-[15px]">priority_high</span>
+</div>
+</div>
+<div class="mt-2">
+<div class="flex items-baseline gap-1">
+<span class="font-metric-headline text-metric-headline text-error font-black">5</span>
+<span class="font-metric-sub text-metric-sub text-error font-bold">Urgent</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-error">
+<span class="font-label-sm text-label-sm font-bold">Oldest: 42m wait</span>
+</div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Refinery Intake</span>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[15px]">biotech</span>
+</div>
+</div>
+<div class="mt-2">
+<div class="flex items-baseline gap-1">
+<span class="font-metric-headline text-metric-headline text-on-surface font-black">12.4</span>
+<span class="font-metric-sub text-metric-sub text-on-surface-variant font-semibold">t</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant">
+<span class="font-label-sm text-label-sm font-bold">In laboratory QA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Route Density & Map Visual Cluster Section -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Route Clusters &amp; Saturation</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-semibold">3 Macro Hubs</span>
+</div>
+<!-- Static Map Integration Target with Cluster Pins -->
+<div class="relative w-full h-36 rounded-xl overflow-hidden shadow-inner">
+<div class="w-full h-full bg-cover bg-center" data-location="Connaught Place, New Delhi, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-PN1ue9kwvKcvtU9NzCIZMpu7FmZ_mr9XQpssNDOm4Cj7ywZ3f4Q-ywdwOKP8TRM9zdA02femDrjn9EaCBd9czFM882fmVshvzkkjN3eer-Yhfgr4-KzwZG4D-2tBBhu4JWKgzksnTtbHXyGVfryQ0FqDZ7AOeQuQi2UmtpE7fJ5mYYroJK4ez0wxlEF7dnxCnHffEz5-paekbJwX2C5WEXDlydPY_rSrUpJYZ-w')"></div>
+<div class="absolute inset-0 bg-inverse-surface/20 flex flex-col justify-between p-2.5 pointer-events-none">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">Real-time GPS Feed</span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+<div class="flex items-center gap-1.5 overflow-x-auto pointer-events-auto">
+<span class="px-2 py-1 rounded bg-surface text-on-surface font-label-sm text-label-sm shadow font-bold">South Delhi: 9</span>
+<span class="px-2 py-1 rounded bg-surface text-on-surface font-label-sm text-label-sm shadow font-bold">Central Delhi: 6</span>
+<span class="px-2 py-1 rounded bg-surface text-on-surface font-label-sm text-label-sm shadow font-bold">Gurugram: 8</span>
+</div>
+</div>
+</div>
+<!-- Cluster Breakdown Bar -->
+<div class="grid grid-cols-3 gap-2 text-center pt-1">
+<div class="bg-surface-container p-2 rounded-lg">
+<div class="font-label-sm text-label-sm text-on-surface-variant">South Delhi</div>
+<div class="font-metric-sub text-metric-sub text-on-surface font-extrabold">9 Pickups</div>
+<div class="font-label-sm text-label-sm text-tertiary">94% on-schedule</div>
+</div>
+<div class="bg-surface-container p-2 rounded-lg">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Central Hub</div>
+<div class="font-metric-sub text-metric-sub text-on-surface font-extrabold">6 Pickups</div>
+<div class="font-label-sm text-label-sm text-secondary">High congestion</div>
+</div>
+<div class="bg-surface-container p-2 rounded-lg">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Cybercity</div>
+<div class="font-metric-sub text-metric-sub text-on-surface font-extrabold">8 Pickups</div>
+<div class="font-label-sm text-label-sm text-tertiary">3 Vans Active</div>
+</div>
+</div>
+</div>
+<!-- Live Dispatch & Collector Allocation List -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Dispatch &amp; Allocation</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold cursor-pointer hover:underline">Re-route All</span>
+</div>
+<!-- Filter chips for Requests -->
+<div class="flex gap-1.5 overflow-x-auto pb-1 text-on-surface-variant">
+<button class="dispatch-filter px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-bold" data-status="all">All (18)</button>
+<button class="dispatch-filter px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold" data-status="unassigned">Pending (5)</button>
+<button class="dispatch-filter px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold" data-status="progress">In Progress (9)</button>
+<button class="dispatch-filter px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold" data-status="collected">Collected (4)</button>
+</div>
+<!-- Request Cards Stream -->
+<div class="space-y-3 mt-1">
+<!-- Item 1: Haldiram's Chandni Chowk (Unassigned) -->
+<div class="bg-surface-container-low p-3.5 rounded-xl flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary font-bold">#RQ-9921</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-error font-label-sm text-label-sm font-bold">Unassigned</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate mt-0.5">Haldiram's Chandni Chowk</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Old Delhi • High Density Zone</p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">180</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">kg</span>
+</div>
+</div>
+<!-- Quick Assign Collector dropdown bar -->
+<div class="flex items-center gap-2 pt-1">
+<div class="relative flex-1">
+<select class="w-full h-11 bg-surface-container-lowest text-on-surface rounded-lg px-3 font-label-md text-label-md appearance-none shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" id="collector-select-9921">
+<option disabled="" selected="" value="">Assign field collector...</option>
+<option value="rahul">Rahul Sharma (Van DL-1L-4491 • 0.8km away)</option>
+<option value="manoj">Manoj Verma (Van DL-2C-1010 • 1.9km away)</option>
+<option value="virender">Virender Pal (E-Loader • 2.4km away)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+<button class="h-11 px-3.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-bold flex items-center gap-1 active:scale-95 transition-transform flex-shrink-0" onclick="assignCollector('RQ-9921')">
+<span>Assign</span>
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Barbeque Nation Noida (In Progress) -->
+<div class="bg-surface-container-low p-3.5 rounded-xl flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary font-bold">#RQ-9918</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">In Transit</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate mt-0.5">Barbeque Nation Noida</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sector 18 • Driver: Amit Kumar (Van 04)</p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">240</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">kg</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest p-2 rounded-lg">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-label-sm text-label-sm">AK</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Amit K. En Route</div>
+<div class="font-label-sm text-label-sm text-tertiary">ETA: 14 mins • 3.2 km remaining</div>
+</div>
+</div>
+<a class="h-9 w-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high" href="tel:919876543210">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+</div>
+<!-- Item 3: Saravana Bhavan CP (Collected, Payout Pending) -->
+<div class="bg-surface-container-low p-3.5 rounded-xl flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary font-bold">#RQ-9912</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm font-bold">Collected • Weighed</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate mt-0.5">Saravana Bhavan CP</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Connaught Place P-Block • OTP Verified</p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">110</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">kg</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest p-2.5 rounded-lg">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Direct Ledger Settlement</div>
+<div class="font-label-lg text-label-lg text-primary font-extrabold">₹6,050.00 Payout</div>
+</div>
+<button class="h-9 px-3 bg-tertiary text-on-tertiary font-label-md text-label-md rounded-lg font-bold flex items-center gap-1 active:scale-95 transition-transform" id="payout-btn-9912" onclick="instantReleasePayout('RQ-9912')">
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+<span>Release Escrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bio-Refinery Acceptance & Discrepancy Queue -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">balance</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Processor QA &amp; Inward Gate</h2>
+</div>
+<span class="font-label-sm text-label-sm text-error font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+        1 Discrepancy
+      </span>
+</div>
+<div class="space-y-3">
+<!-- Batch 1: BioEnergy Neemrana (Acceptable Var) -->
+<div class="bg-surface-container-low p-3.5 rounded-xl flex flex-col gap-2">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-extrabold">Batch #OL-4102</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm font-bold">QA Cleared</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">BioEnergy Neemrana Terminal • Tanker T-09</p>
+</div>
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-lowest p-2 rounded-lg font-body-sm text-body-sm">
+<div>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Aggregated:</span>
+<span class="font-bold text-on-surface block">2,100 kg</span>
+</div>
+<div>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Weighbridge:</span>
+<span class="font-bold text-on-surface block">2,090 kg (-0.47%)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Tolerance: Within 0.5% buffer</span>
+<button class="h-10 px-4 bg-tertiary text-on-tertiary rounded-lg font-label-md text-label-md font-bold shadow active:scale-95 transition-transform flex items-center gap-1.5" id="batch-btn-4102" onclick="approveBatch('OL-4102')">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+<span>Approve Inward</span>
+</button>
+</div>
+</div>
+<!-- Batch 2: Flagged Moisture (Discrepancy) -->
+<div class="bg-surface-container-low p-3.5 rounded-xl flex flex-col gap-2.5">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-extrabold">Batch #OL-4089</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-error font-label-sm text-label-sm font-bold">QA Flagged</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ecoluxe Biodiesel Jhajjar • Aggregator Hub 2</p>
+</div>
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div class="bg-error-container/20 p-2.5 rounded-lg flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[18px] flex-shrink-0 mt-0.5">water_drop</span>
+<div>
+<div class="font-label-md text-label-md text-error font-bold">Moisture Level: 1.8% (Max: 1.0%)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">FFA parameter normal (2.1%). Excess water sediment detected in lab centrifuge test.</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-0.5">
+<button class="flex-1 h-10 bg-surface-container text-on-surface font-label-md text-label-md rounded-lg font-semibold active:scale-95 transition-transform">
+            View Lab Cert
+          </button>
+<button class="flex-1 h-10 bg-primary text-on-primary font-label-md text-label-md rounded-lg font-bold active:scale-95 transition-transform" onclick="applyDiscountPenalty('OL-4089')">
+            Apply -8% Penalty
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Settlement Ledger & FSSAI Compliance Summary -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">FSSAI RUCO Compliance &amp; Payouts</h2>
+</div>
+<span class="material-symbols-outlined text-tertiary">lock</span>
+</div>
+<!-- Stats split -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container p-3 rounded-xl flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Escrow Released</span>
+<div class="mt-1">
+<div class="font-headline-md text-headline-md text-primary font-extrabold">₹2,66,750</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">41 auto-disbursals</span>
+</div>
+</div>
+<div class="bg-surface-container p-3 rounded-xl flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Digital RUCO Certs</span>
+<div class="mt-1">
+<div class="font-headline-md text-headline-md text-tertiary font-extrabold">38 Mints</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">100% Traceable SHA-256</span>
+</div>
+</div>
+</div>
+<!-- Audit Trace Chain Mini Badge -->
+<div class="flex items-center justify-between bg-surface-container-low p-2.5 rounded-lg text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">fact_check</span>
+<div class="font-body-sm text-body-sm">
+<span class="font-bold">Next FSSAI Audit Sync</span>
+<span class="block text-on-surface-variant font-label-sm text-label-sm">Automated push scheduled in 3h 12m</span>
+</div>
+</div>
+<button class="px-2.5 py-1 bg-surface-container-high rounded text-on-surface font-label-sm text-label-sm font-bold active:scale-95 transition-transform">
+        Audit Log
+      </button>
+</div>
+</div>
+<!-- Operational Toast / Feedback Anchor -->
+<div class="fixed bottom-20 left-4 right-4 bg-inverse-surface text-inverse-on-surface p-3 rounded-xl shadow-lg flex items-center justify-between transform transition-all duration-300 translate-y-32 opacity-0 pointer-events-none z-50" id="toast-notif">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" id="toast-icon">check_circle</span>
+<span class="font-body-sm text-body-sm font-semibold" id="toast-message">Action completed successfully</span>
+</div>
+<span class="material-symbols-outlined text-[18px] opacity-60">close</span>
+</div>
+</div>
+<script>
+  // Toast notification feedback system
+  function showToast(msg, icon = 'check_circle') {
+    const toast = document.getElementById('toast-notif');
+    const msgEl = document.getElementById('toast-message');
+    const iconEl = document.getElementById('toast-icon');
+    if (!toast) return;
+
+    msgEl.innerText = msg;
+    iconEl.innerText = icon;
+    toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3200);
+  }
+
+  // Interactive Quick Assign Handler
+  function assignCollector(requestId) {
+    const select = document.getElementById('collector-select-9921');
+    const collectorName = select && select.value ? select.options[select.selectedIndex].text.split('(')[0].trim() : 'Field Van DL-1L';
+    showToast(`Request ${requestId} assigned to ${collectorName}`, 'local_shipping');
+  }
+
+  // Instant Escrow Payout Handler
+  function instantReleasePayout(requestId) {
+    const btn = document.getElementById('payout-btn-9912');
+    if (btn) {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">done</span> Settled`;
+      btn.classList.remove('bg-tertiary');
+      btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+      btn.disabled = true;
+    }
+    showToast(`₹6,050.00 released to Saravana Bhavan account`, 'payments');
+  }
+
+  // Batch Approval Handler
+  function approveBatch(batchId) {
+    const btn = document.getElementById('batch-btn-4102');
+    if (btn) {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">verified</span> Accepted`;
+      btn.classList.remove('bg-tertiary');
+      btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+      btn.disabled = true;
+    }
+    showToast(`Batch #${batchId} inward cleared. Refinery intake logged.`, 'verified');
+  }
+
+  // Discount Penalty Handler
+  function applyDiscountPenalty(batchId) {
+    showToast(`Penalty applied to #${batchId}. Updated contract payout generated.`, 'percent');
+  }
+
+  // Role pill switcher filter behavior
+  document.querySelectorAll('.filter-role-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      document.querySelectorAll('.filter-role-btn').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary');
+        b.classList.add('bg-surface-container-high', 'text-on-surface');
+      });
+      button.classList.add('bg-primary', 'text-on-primary');
+      button.classList.remove('bg-surface-container-high', 'text-on-surface');
+      showToast(`Filter view: ${button.innerText.trim()}`, 'filter_list');
+    });
+  });
+
+  // Request list filter chips
+  document.querySelectorAll('.dispatch-filter').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.dispatch-filter').forEach(c => {
+        c.classList.remove('text-primary', 'font-bold');
+        c.classList.add('text-on-surface-variant', 'font-semibold');
+      });
+      chip.classList.add('text-primary', 'font-bold');
+      chip.classList.remove('text-on-surface-variant', 'font-semibold');
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(42,26,14,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-1"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="home-landing" href="#"><span class="material-symbols-outlined text-[22px]">local_gas_station</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="restaurant-hub" href="#"><span class="material-symbols-outlined text-[22px]">restaurant</span><span class="font-label-sm text-label-sm">Hub</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="collector-route" href="#"><span class="material-symbols-outlined text-[22px]">route</span><span class="font-label-sm text-label-sm">Route</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="batch-trace" href="#"><span class="material-symbols-outlined text-[22px]">qr_code_scanner</span><span class="font-label-sm text-label-sm">Trace</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors gap-0.5 text-primary font-bold" data-path="operations-admin" href="#"><span class="material-symbols-outlined text-[22px]">admin_panel_settings</span><span class="font-label-sm text-label-sm">Ops</span></a></div></nav></body></html>

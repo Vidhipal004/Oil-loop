@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="desktop_dashboard" name="shell-type"/>
+<title>OilLoop — Operations Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-background": "#28180c",
+            "surface-container-highest": "#fcddc9",
+            "surface-dim": "#f3d4c1",
+            "on-primary-fixed": "#341100",
+            "on-primary-fixed-variant": "#793100",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#f7fff3",
+            "inverse-surface": "#3f2d1f",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-tint": "#9f4200",
+            "secondary-container": "#fdb659",
+            "secondary-fixed": "#ffddb7",
+            "on-secondary-container": "#724700",
+            "surface-container-high": "#ffe3d1",
+            "outline": "#8b7266",
+            "surface-bright": "#fff8f5",
+            "on-secondary-fixed": "#2a1700",
+            "on-secondary-fixed-variant": "#653e00",
+            "primary": "#d4621a",
+            "primary-dark": "#9b4000",
+            "secondary": "#855300",
+            "background": "#fff8ef",
+            "outline-variant": "#dec0b3",
+            "surface-variant": "#fcddc9",
+            "tertiary": "#296838",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#ffb95e",
+            "on-surface": "#2a1a0e",
+            "tertiary-container": "#43824e",
+            "inverse-primary": "#ffb691",
+            "on-tertiary": "#ffffff",
+            "primary-container": "#c05407",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#0e5224",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#574238",
+            "tertiary-fixed-dim": "#93d69a",
+            "primary-fixed": "#ffdbcb",
+            "on-tertiary-fixed": "#002109",
+            "primary-fixed-dim": "#ffb691",
+            "error": "#ba1a1a",
+            "surface": "#fff8ef",
+            "on-primary-container": "#fffbff",
+            "surface-container-low": "#fff3eb",
+            "tertiary-fixed": "#aff3b5",
+            "surface-container": "#fce9dd",
+            "inverse-on-surface": "#ffede3"
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #2a1a0e;
+      background-color: #fff8ef;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #e6cebf;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #cba895;
+    }
+  </style>
+</head>
+<body class="h-full flex overflow-hidden text-on-surface bg-background antialiased selection:bg-primary/20 selection:text-primary">
+<!-- COLLAPSIBLE CLEAN SIDEBAR -->
+<aside class="w-64 bg-surface-container-lowest border-r border-[#eddcd2] flex flex-col shrink-0 transition-all duration-300 z-40 relative" id="main-sidebar">
+<!-- Brand / Header -->
+<div class="h-16 px-5 border-b border-[#eddcd2] flex items-center justify-between">
+<div class="flex items-center gap-3 overflow-hidden">
+<img alt="OilLoop Logo" class="h-8 w-8 object-contain shrink-0 rounded-lg shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1X6-DwPD8v2DkO-jDkhd_J_uOTTBKMA3rZetzavLTBEdylZJ6DAEmuIz3rC2J34Qum2jWSbxvhNlgsNLdV7fDc0o2FtTuKxFSddAntynrHzv9SFPZ4N-yV0_fzu5qJJjsmZGgOIkgkFsiIWPpu13A_VH645OpuGT5iSNNAl2Dlckl6i2kAucC79vdYrYhrKFXolpy9K3yMQRdShf_w69eGW6qZqDfjEGI_6sQAdyNk"/>
+<div class="sidebar-text truncate">
+<span class="font-extrabold text-lg text-on-surface tracking-tight">Oil<span class="text-primary">Loop</span></span>
+<span class="text-[10px] block font-bold text-on-surface-variant uppercase tracking-wider -mt-1">Command Ops</span>
+</div>
+</div>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="toggleSidebar()" title="Toggle Sidebar">
+<span class="material-symbols-outlined text-[20px]" id="sidebar-toggle-icon">menu_open</span>
+</button>
+</div>
+<!-- Hub Status Subcard -->
+<div class="p-3 border-b border-[#eddcd2] bg-[#fff5ec] sidebar-text">
+<div class="flex items-center justify-between text-xs font-semibold text-on-surface-variant mb-1">
+<span>TELEMETRY NODE</span>
+<span class="flex items-center gap-1 text-tertiary font-bold text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span> ACTIVE
+        </span>
+</div>
+<div class="text-xs font-bold text-on-surface truncate">Delhi NCR Apex Hub #01</div>
+<div class="text-[11px] text-on-surface-variant">Central Gateway • Tier-1</div>
+</div>
+<!-- Navigation Menu -->
+<nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 custom-scrollbar">
+<div class="px-3 pb-1 text-[11px] font-bold uppercase tracking-wider text-on-surface-variant/70 sidebar-text">Operations</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold bg-surface-container text-primary shadow-sm border border-primary/10" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary">dashboard</span>
+<span class="sidebar-text flex-1">Overview</span>
+<span class="sidebar-text text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-primary text-on-primary">Live</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span class="sidebar-text flex-1">Pickups</span>
+<span class="sidebar-text text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-error-container text-error">5 unassigned</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+<span class="sidebar-text flex-1">Collectors</span>
+<span class="sidebar-text text-xs text-on-surface-variant/80 font-bold">14/16</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">factory</span>
+<span class="sidebar-text flex-1">Processors</span>
+<span class="sidebar-text text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-800">1 QA flag</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+<span class="sidebar-text">Batches &amp; Trace</span>
+</a>
+<div class="px-3 pt-4 pb-1 text-[11px] font-bold uppercase tracking-wider text-on-surface-variant/70 sidebar-text">Settlement &amp; Compliance</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="sidebar-text flex-1">Payments</span>
+<span class="sidebar-text text-[11px] font-bold text-tertiary">₹6.86L</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="sidebar-text flex-1">RUCO Reports</span>
+<span class="sidebar-text w-2 h-2 rounded-full bg-tertiary"></span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">folder_shared</span>
+<span class="sidebar-text">Documents</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="sidebar-text">Settings</span>
+</a>
+</nav>
+<!-- Illustrative demo note badge & User mini block -->
+<div class="p-3 border-t border-[#eddcd2] bg-surface-container-lowest">
+<div class="bg-[#fcedde] px-2.5 py-1.5 rounded-lg mb-2 text-center sidebar-text">
+<span class="text-[10px] font-extrabold text-primary tracking-wide block uppercase">Demo Data — Illustrative Only</span>
+</div>
+<div class="flex items-center gap-3 p-1.5 rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center font-bold text-xs text-on-primary shrink-0 shadow">
+          OA
+        </div>
+<div class="sidebar-text flex-1 min-w-0">
+<p class="text-xs font-bold text-on-surface truncate">Vikas Saxena</p>
+<p class="text-[10px] text-on-surface-variant truncate">Lead Dispatch Controller</p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface sidebar-text" title="Logout">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- MAIN DESKTOP WORKSPACE -->
+<div class="flex-1 flex flex-col min-w-0 overflow-hidden bg-background">
+<!-- DESKTOP TOP BAR -->
+<header class="h-16 px-6 bg-surface-container-lowest/90 backdrop-blur-md border-b border-[#eddcd2] flex items-center justify-between gap-4 shrink-0 z-30">
+<!-- Search & Zone context -->
+<div class="flex items-center gap-4 flex-1 max-w-2xl">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[20px] text-on-surface-variant">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-xl bg-surface-container-low border border-[#ecdcd2] text-xs font-medium placeholder:text-on-surface-variant/70 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all" placeholder="Search Request ID, Generator (Haldiram, BBQ Nation), Collector or Tanker..." type="text"/>
+</div>
+<!-- Location Dropdown Selector -->
+<div class="relative hidden lg:block shrink-0">
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low hover:bg-surface-container border border-[#eddcd2] rounded-xl text-xs font-semibold text-on-surface cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[18px]">my_location</span>
+<span>Delhi NCR Apex Hub</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Real-Time Telemetry & Action Badges -->
+<div class="flex items-center gap-3">
+<!-- Live telemetry pill -->
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-tertiary">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span>Live Telemetry • 14/16 Vans On-Duty</span>
+</div>
+<!-- Shift mode indicator -->
+<div class="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-surface-container text-xs font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>Morning Shift: 06:00 - 15:00</span>
+</div>
+<!-- Notification Bell with QA discrepancy warning -->
+<button class="relative p-2 rounded-xl text-on-surface hover:bg-surface-container-low transition-colors" onclick="showToast('2 Discrepancies pending lab review in Neemrana &amp; Jhajjar terminal', 'warning')" title="Notifications">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-[10px] font-extrabold text-on-error flex items-center justify-center animate-pulse">2</span>
+</button>
+<!-- Divider -->
+<div class="h-6 w-px bg-[#eddcd2]"></div>
+<!-- Quick Action Trigger -->
+<button class="h-9 px-3.5 bg-primary hover:bg-[#ba5312] text-on-primary font-bold text-xs rounded-xl flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" onclick="openSmartAssignModal('RQ-9921', 'Haldiram\'s Chandni Chowk', '180 kg')">
+<span class="material-symbols-outlined text-[18px]">add_task</span>
+<span>Quick Dispatch</span>
+</button>
+<!-- Profile Menu trigger -->
+<div class="flex items-center gap-2 cursor-pointer pl-1">
+<div class="w-9 h-9 rounded-xl bg-surface-container border border-[#e8d2c4] flex items-center justify-center font-extrabold text-primary text-sm">
+            DL
+          </div>
+</div>
+</div>
+</header>
+<!-- INNER SCROLLABLE WORKSPACE -->
+<div class="flex-1 overflow-y-auto px-6 py-5 custom-scrollbar space-y-5">
+<!-- TOP BANNER BAR -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-surface-container-lowest p-4 rounded-2xl border border-[#eddcd2] shadow-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs uppercase font-extrabold tracking-wider text-primary">National Biofuels Mission RUCO Grid</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-[10px] font-bold text-on-surface-variant">FSSAI Certified Aggregation</span>
+</div>
+<h1 class="text-2xl font-black text-on-surface tracking-tight mt-0.5">Operations Command Center</h1>
+<p class="text-xs text-on-surface-variant mt-0.5">Real-time telematics, algorithmic dispatch routing, and instant refinery inward settlements.</p>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto">
+<span class="text-xs font-semibold text-on-surface-variant">Last automated sync: <span class="font-bold text-on-surface">32 sec ago</span></span>
+<button class="px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-[#eedfd6] text-xs font-bold text-on-surface flex items-center gap-1.5 transition-colors" onclick="refreshData()">
+<span class="material-symbols-outlined text-[16px] text-primary" id="refresh-icon">sync</span>
+<span>Sync Telemetry</span>
+</button>
+</div>
+</div>
+<!-- KPI METRIC ROW (5 Key Operational Indicators) -->
+<section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-2xl border border-[#eddcd2] shadow-sm flex flex-col justify-between hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Today's Pickups</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-1.5">
+<span class="text-3xl font-black text-on-surface tracking-tight">142</span>
+<span class="text-xs font-semibold text-on-surface-variant">completed</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-tertiary font-bold text-xs">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+12% vs last week</span>
+</div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-2xl border border-[#eddcd2] shadow-sm flex flex-col justify-between hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Total UCO Volume</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">oil_barrel</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black text-on-surface tracking-tight">12,480</span>
+<span class="text-sm font-bold text-on-surface-variant">kg</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-on-surface-variant text-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Target: 15,000 kg (83%)</span>
+</div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-4 rounded-2xl border border-[#eddcd2] shadow-sm flex flex-col justify-between hover:border-error/40 transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-wider text-error">Unassigned Pickups</span>
+<div class="w-7 h-7 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">emergency</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-1.5">
+<span class="text-3xl font-black text-error tracking-tight">5</span>
+<span class="text-xs font-bold px-1.5 py-0.5 rounded bg-error/10 text-error">Urgent</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-error text-xs font-semibold">
+<span class="material-symbols-outlined text-[15px]">timer</span>
+<span>Oldest: 42m wait</span>
+</div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-4 rounded-2xl border border-[#eddcd2] shadow-sm flex flex-col justify-between hover:border-amber-400 transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-wider text-amber-800">Discrepancies &amp; QA</span>
+<div class="w-7 h-7 rounded-lg bg-amber-100 flex items-center justify-center text-amber-800">
+<span class="material-symbols-outlined text-[18px]">biotech</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-1.5">
+<span class="text-3xl font-black text-amber-900 tracking-tight">2</span>
+<span class="text-xs font-semibold text-on-surface-variant">Batches</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-amber-800 text-xs font-bold">
+<span class="material-symbols-outlined text-[15px]">report_problem</span>
+<span>Lab reconciliation needed</span>
+</div>
+</div>
+</div>
+<!-- KPI 5 -->
+<div class="bg-surface-container-lowest p-4 rounded-2xl border border-[#eddcd2] shadow-sm flex flex-col justify-between hover:border-tertiary/40 transition-colors col-span-2 md:col-span-1">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-wider text-tertiary">Released Escrow</span>
+<div class="w-7 h-7 rounded-lg bg-emerald-100 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black text-tertiary tracking-tight">₹6.86<span class="text-lg">L</span></span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+<span>Instant UPI &amp; NEFT rails</span>
+</div>
+</div>
+</div>
+</section>
+<!-- DUAL COLUMN OPERATIONS GRID (60% Dispatch / 40% Telemetry & Processor QA) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+<!-- LEFT COLUMN: 60% (col-span-7) PICKUP OPERATIONS & DISPATCH GRID -->
+<section class="lg:col-span-7 space-y-4">
+<div class="bg-surface-container-lowest rounded-2xl border border-[#eddcd2] shadow-sm overflow-hidden">
+<!-- Table / Grid Header -->
+<div class="p-4 border-b border-[#eddcd2] flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#fffaf5]">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div>
+<h2 class="text-base font-extrabold text-on-surface">Pickup Operations &amp; Dispatch Grid</h2>
+<p class="text-xs text-on-surface-variant">Intelligent collector allocation, real-time OTP validation &amp; mass audits</p>
+</div>
+</div>
+<!-- Quick action -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-[#ecdcd2] text-xs font-bold text-primary flex items-center gap-1 active:scale-95 transition-all" onclick="autoAssignPending()">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+<span>Auto-Dispatch All</span>
+</button>
+</div>
+</div>
+<!-- Tab Filters Bar -->
+<div class="px-4 pt-3 pb-2 border-b border-[#eddcd2] flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 custom-scrollbar">
+<button class="pickup-tab px-3 py-1.5 rounded-xl bg-primary text-on-primary text-xs font-bold transition-all shadow-sm" onclick="filterPickups('all', this)">
+                  All (18)
+                </button>
+<button class="pickup-tab px-3 py-1.5 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high text-xs font-bold transition-all flex items-center gap-1" onclick="filterPickups('unassigned', this)">
+<span>Unassigned (5)</span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+</button>
+<button class="pickup-tab px-3 py-1.5 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high text-xs font-semibold transition-all" onclick="filterPickups('in-transit', this)">
+                  In-Transit (9)
+                </button>
+<button class="pickup-tab px-3 py-1.5 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high text-xs font-semibold transition-all" onclick="filterPickups('reconciled', this)">
+                  Weighed &amp; Reconciled (4)
+                </button>
+</div>
+<!-- Filter Selector for Zones -->
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<select class="bg-surface-container-low border border-[#eedfd6] rounded-lg px-2 py-1 text-xs text-on-surface font-semibold focus:outline-none">
+<option>All Zones (NCR)</option>
+<option>South Delhi</option>
+<option>Central / Old Delhi</option>
+<option>Gurugram / Cybercity</option>
+<option>Noida / Gr. Noida</option>
+</select>
+</div>
+</div>
+<!-- PICKUP ITEMS LIST (High density, readable card rows) -->
+<div class="p-4 space-y-3" id="pickups-container">
+<!-- ITEM 1: Haldiram's Chandni Chowk (Unassigned - Urgent) -->
+<div class="pickup-row unassigned p-3.5 rounded-xl border border-red-200 bg-[#fff9f8] hover:shadow-md transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-error/10 text-error flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-extrabold text-xs text-primary">#RQ-9921</span>
+<span class="px-2 py-0.5 rounded-md bg-error text-on-error font-extrabold text-[10px] tracking-wide uppercase">Urgent • Unassigned</span>
+<span class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> SLA: 28m left
+                        </span>
+</div>
+<h3 class="text-sm font-extrabold text-on-surface truncate mt-0.5">Haldiram's Chandni Chowk</h3>
+<p class="text-xs text-on-surface-variant">Old Delhi Hub • High Traffic Zone • EST. 180 kg UCO</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-red-100">
+<div class="text-right">
+<div class="text-xs text-on-surface-variant">Est. Mass</div>
+<div class="text-base font-extrabold text-on-surface">180 <span class="text-xs text-on-surface-variant font-medium">kg</span></div>
+</div>
+<button class="h-9 px-3.5 bg-primary hover:bg-[#b85211] text-on-primary rounded-xl font-bold text-xs flex items-center gap-1.5 shadow active:scale-95 transition-all" onclick="openSmartAssignModal('RQ-9921', 'Haldiram\'s Chandni Chowk', '180 kg')">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+<span>Smart Assign</span>
+</button>
+</div>
+</div>
+<!-- Recommendation strip -->
+<div class="mt-3 pt-2.5 border-t border-red-100 flex items-center justify-between text-xs bg-white/70 p-2 rounded-lg">
+<div class="flex items-center gap-2 text-on-surface font-medium truncate">
+<span class="text-[11px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-tertiary">96% Algorithmic Match</span>
+<span class="truncate">Suggested: <strong>Amit Kumar</strong> (EV Cargo Auto • 2.1km away • 450kg free)</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">check_circle</span>
+</div>
+</div>
+<!-- ITEM 2: Barbeque Nation Noida (In-Transit) -->
+<div class="pickup-row in-transit p-3.5 rounded-xl border border-[#eddcd2] bg-surface-container-lowest hover:shadow-md transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-extrabold text-xs text-primary">#RQ-9918</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-extrabold text-[10px] tracking-wide uppercase">In-Transit</span>
+<span class="text-xs text-tertiary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span> Live GPS Active
+                        </span>
+</div>
+<h3 class="text-sm font-extrabold text-on-surface truncate mt-0.5">Barbeque Nation Noida Sector 18</h3>
+<p class="text-xs text-on-surface-variant">Driver: <strong>Amit Kumar</strong> (Van DL-1L-4491) • ETA: 14 mins (3.2 km remaining)</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#f3e3d8]">
+<div class="text-right">
+<div class="text-xs text-on-surface-variant">Estimated vs Actual</div>
+<div class="text-base font-extrabold text-on-surface">240 <span class="text-xs text-on-surface-variant">/ ~245 kg</span></div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" onclick="showToast('Calling driver Amit Kumar (Van 04)...', 'phone')" title="Call Collector">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+<button class="px-3 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs font-bold text-on-surface transition-colors" onclick="showToast('Telemetry route coordinates synced with DL-1L-4491', 'navigation')">
+                        Track
+                      </button>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-[#f3e3d8] flex items-center justify-between text-xs text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span>SLA: <strong>Within window</strong></span>
+<span>•</span>
+<span>Container: <strong>4 Sealed 50L Blue Drums</strong></span>
+</div>
+<span class="text-[11px] font-bold text-primary">OTP verification pending on generator side</span>
+</div>
+</div>
+<!-- ITEM 3: Saravana Bhavan CP (Weighed & Reconciled) -->
+<div class="pickup-row reconciled p-3.5 rounded-xl border border-emerald-200 bg-[#f7fbf8] hover:shadow-md transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-emerald-100 text-tertiary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">scale</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-extrabold text-xs text-primary">#RQ-9912</span>
+<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-tertiary font-extrabold text-[10px] tracking-wide uppercase">Weighed &amp; Reconciled</span>
+<span class="text-xs text-tertiary font-semibold">OTP #4412 Verified</span>
+</div>
+<h3 class="text-sm font-extrabold text-on-surface truncate mt-0.5">Saravana Bhavan Connaught Place</h3>
+<p class="text-xs text-on-surface-variant">P-Block CP • Weighing scale verified: <strong>110.4 kg</strong> (Est was 110 kg • +0.36%)</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-emerald-100">
+<div class="text-right">
+<div class="text-xs text-on-surface-variant">Settlement Payout</div>
+<div class="text-base font-extrabold text-tertiary">₹6,050.00</div>
+</div>
+<button class="h-9 px-3.5 bg-tertiary hover:bg-[#1f522b] text-on-tertiary rounded-xl font-bold text-xs flex items-center gap-1.5 shadow active:scale-95 transition-all" id="payout-btn-9912" onclick="instantReleasePayout('RQ-9912')">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Release Escrow</span>
+</button>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-emerald-100 flex items-center justify-between text-xs text-on-surface-variant">
+<span>Collector: <strong>Manoj Verma (Van 02)</strong></span>
+<span class="text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">fact_check</span> RUCO Hash: 0x8a9f...e102 Generated
+                  </span>
+</div>
+</div>
+<!-- ITEM 4: Karim's Jama Masjid (Unassigned) -->
+<div class="pickup-row unassigned p-3.5 rounded-xl border border-red-200 bg-[#fff9f8] hover:shadow-md transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-error/10 text-error flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-extrabold text-xs text-primary">#RQ-9923</span>
+<span class="px-2 py-0.5 rounded-md bg-error text-on-error font-extrabold text-[10px] tracking-wide uppercase">Urgent • Unassigned</span>
+<span class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> Wait: 35 mins
+                        </span>
+</div>
+<h3 class="text-sm font-extrabold text-on-surface truncate mt-0.5">Karim's Historic Dining</h3>
+<p class="text-xs text-on-surface-variant">Matia Mahal, Jama Masjid • Narrow alley entry • 210 kg</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-red-100">
+<div class="text-right">
+<div class="text-xs text-on-surface-variant">Est. Mass</div>
+<div class="text-base font-extrabold text-on-surface">210 <span class="text-xs text-on-surface-variant">kg</span></div>
+</div>
+<button class="h-9 px-3.5 bg-primary hover:bg-[#b85211] text-on-primary rounded-xl font-bold text-xs flex items-center gap-1.5 shadow active:scale-95 transition-all" onclick="openSmartAssignModal('RQ-9923', 'Karim\'s Historic Dining', '210 kg')">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+<span>Smart Assign</span>
+</button>
+</div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-red-100 flex items-center justify-between text-xs bg-white/70 p-2 rounded-lg">
+<div class="flex items-center gap-2 text-on-surface font-medium truncate">
+<span class="text-[11px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-tertiary">91% Match</span>
+<span class="truncate">Suggested: <strong>Virender Pal</strong> (E-Loader 3-Wheeler • Fits alleyway • 1.4km away)</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">check_circle</span>
+</div>
+</div>
+<!-- ITEM 5: Wow! Momo Connaught Place (In-Transit) -->
+<div class="pickup-row in-transit p-3.5 rounded-xl border border-[#eddcd2] bg-surface-container-lowest hover:shadow-md transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-extrabold text-xs text-primary">#RQ-9915</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-extrabold text-[10px] tracking-wide uppercase">In-Transit</span>
+</div>
+<h3 class="text-sm font-extrabold text-on-surface truncate mt-0.5">Wow! Momo Food Services</h3>
+<p class="text-xs text-on-surface-variant">Radial Road 3, Inner Circle • Driver: Rajesh Singh (Van 07)</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#f3e3d8]">
+<div class="text-right">
+<div class="text-xs text-on-surface-variant">Est. Mass</div>
+<div class="text-base font-extrabold text-on-surface">95 <span class="text-xs text-on-surface-variant">kg</span></div>
+</div>
+<span class="text-xs font-bold text-tertiary px-2.5 py-1 rounded-lg bg-tertiary/10">Arrived at Site</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State for tab switching demo -->
+<div class="hidden p-10 text-center flex-col items-center justify-center" id="empty-state">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-3">
+<span class="material-symbols-outlined text-[28px]">search_off</span>
+</div>
+<h4 class="text-sm font-extrabold text-on-surface">No Operations Under This Filter</h4>
+<p class="text-xs text-on-surface-variant max-w-xs mt-1">All pickups matching this state have been reconciled or moved to the processing queue.</p>
+<button class="mt-3 px-3.5 py-1.5 rounded-xl bg-primary text-on-primary text-xs font-bold" onclick="filterPickups('all', document.querySelector('.pickup-tab'))">
+                Reset View
+              </button>
+</div>
+<!-- Bottom pagination / summary -->
+<div class="p-3 bg-surface-container-low border-t border-[#eddcd2] flex items-center justify-between text-xs text-on-surface-variant font-medium">
+<span>Showing <strong>5 of 18</strong> active operations</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-high disabled:opacity-50 text-xs">Prev</button>
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-bold text-xs">1</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-high text-xs">2</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-high text-xs">Next</button>
+</div>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: 40% (col-span-5) ROUTE CLUSTERS MAP & PROCESSOR QA -->
+<section class="lg:col-span-5 space-y-4">
+<!-- REAL-TIME INTERACTIVE ROUTE & HUB CLUSTERS MAP PANEL -->
+<div class="bg-surface-container-lowest rounded-2xl border border-[#eddcd2] shadow-sm overflow-hidden">
+<div class="p-4 border-b border-[#eddcd2] flex items-center justify-between bg-[#fffaf5]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+<div>
+<h2 class="text-sm font-extrabold text-on-surface">Delhi NCR Clusters &amp; Fleet Telemetry</h2>
+<p class="text-[11px] text-on-surface-variant">Live vehicle telemetry &amp; pickup density heat</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-tertiary font-extrabold text-[10px]">3 Macro Hubs</span>
+</div>
+<!-- Illustrative Map Visual Container -->
+<div class="relative w-full h-56 bg-cover bg-center overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-PN1ue9kwvKcvtU9NzCIZMpu7FmZ_mr9XQpssNDOm4Cj7ywZ3f4Q-ywdwOKP8TRM9zdA02femDrjn9EaCBd9czFM882fmVshvzkkjN3eer-Yhfgr4-KzwZG4D-2tBBhu4JWKgzksnTtbHXyGVfryQ0FqDZ7AOeQuQi2UmtpE7fJ5mYYroJK4ez0wxlEF7dnxCnHffEz5-paekbJwX2C5WEXDlydPY_rSrUpJYZ-w');">
+<!-- Subtle dark tint -->
+<div class="absolute inset-0 bg-[#28180c]/25 pointer-events-none"></div>
+<!-- Top floating status overlay -->
+<div class="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-auto">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-lowest/95 backdrop-blur-md text-[11px] font-bold text-on-surface shadow-sm border border-black/5 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span> GPS Refresh: 1.2s
+                </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-lowest/95 backdrop-blur-md text-[11px] font-bold text-primary shadow-sm border border-black/5">
+                  14 Vans Active
+                </span>
+</div>
+<!-- Interactive Pin Mockups on Map -->
+<div class="absolute top-16 left-28 cursor-pointer transform hover:scale-110 transition-transform" onclick="showToast('Cluster 1: Connaught Place &amp; Old Delhi - 6 Vans Active', 'hub')">
+<div class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-black text-[10px] shadow-lg flex items-center gap-1 border-2 border-white">
+<span class="material-symbols-outlined text-[12px]">local_shipping</span> 6 Central
+                </div>
+</div>
+<div class="absolute bottom-14 left-24 cursor-pointer transform hover:scale-110 transition-transform" onclick="showToast('Cluster 2: South Delhi &amp; Saket - 9 Vans Active', 'hub')">
+<div class="px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-black text-[10px] shadow-lg flex items-center gap-1 border-2 border-white">
+<span class="material-symbols-outlined text-[12px]">check</span> 9 South
+                </div>
+</div>
+<div class="absolute bottom-8 right-16 cursor-pointer transform hover:scale-110 transition-transform" onclick="showToast('Cluster 3: Gurugram Cybercity - 8 Vans Active', 'hub')">
+<div class="px-2 py-0.5 rounded-full bg-amber-800 text-white font-black text-[10px] shadow-lg flex items-center gap-1 border-2 border-white">
+<span class="material-symbols-outlined text-[12px]">navigation</span> 8 Gurugram
+                </div>
+</div>
+<!-- Bottom overlay controls -->
+<div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-auto">
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-white/95 text-on-surface flex items-center justify-center shadow hover:bg-white text-xs font-bold" onclick="showToast('Map zoomed in', 'zoom_in')">+</button>
+<button class="w-7 h-7 rounded-lg bg-white/95 text-on-surface flex items-center justify-center shadow hover:bg-white text-xs font-bold" onclick="showToast('Map zoomed out', 'zoom_out')">-</button>
+</div>
+<span class="text-[10px] font-bold px-2 py-1 rounded bg-black/60 text-white backdrop-blur-sm">DEMO TELEMETRY FEED</span>
+</div>
+</div>
+<!-- Saturation Cluster Metrics -->
+<div class="grid grid-cols-3 divide-x divide-[#eddcd2] border-t border-[#eddcd2] text-center bg-surface-container-low">
+<div class="p-2.5">
+<div class="text-[11px] font-semibold text-on-surface-variant">South Delhi</div>
+<div class="text-sm font-extrabold text-on-surface mt-0.5">9 Pickups</div>
+<div class="text-[10px] font-bold text-tertiary">94% On-Schedule</div>
+</div>
+<div class="p-2.5">
+<div class="text-[11px] font-semibold text-on-surface-variant">Central Hub</div>
+<div class="text-sm font-extrabold text-on-surface mt-0.5">6 Pickups</div>
+<div class="text-[10px] font-bold text-amber-700">High Congestion</div>
+</div>
+<div class="p-2.5">
+<div class="text-[11px] font-semibold text-on-surface-variant">Gurugram</div>
+<div class="text-sm font-extrabold text-on-surface mt-0.5">8 Pickups</div>
+<div class="text-[10px] font-bold text-tertiary">3 Vans Active</div>
+</div>
+</div>
+</div>
+<!-- PROCESSOR QA & INWARD GATE (DISCREPANCY RESOLUTION) -->
+<div class="bg-surface-container-lowest rounded-2xl border border-[#eddcd2] shadow-sm overflow-hidden">
+<div class="p-4 border-b border-[#eddcd2] flex items-center justify-between bg-[#fffaf5]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">balance</span>
+<div>
+<h2 class="text-sm font-extrabold text-on-surface">Processor QA &amp; Inward Gate</h2>
+<p class="text-[11px] text-on-surface-variant">Weighbridge reconciliation, FFA &amp; moisture validation</p>
+</div>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-error text-[10px] font-extrabold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> 2 Discrepancies
+              </span>
+</div>
+<!-- Discrepancy & Batch List -->
+<div class="p-4 space-y-3">
+<!-- DISCREPANCY ITEM: Batch #OL-4089 (Flagged +1.8% moisture) -->
+<div class="p-3.5 rounded-xl border border-red-200 bg-[#fff8f7]">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-black text-xs text-on-surface">Batch #OL-4089</span>
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-extrabold text-[10px] uppercase">QA Flagged</span>
+</div>
+<p class="text-xs font-semibold text-on-surface mt-0.5">Ecoluxe Biodiesel Jhajjar Terminal</p>
+<p class="text-[11px] text-on-surface-variant">Aggregator Hub 2 • Tanker DL-1GB-7710</p>
+</div>
+<span class="material-symbols-outlined text-error text-[22px]">warning</span>
+</div>
+<!-- Discrepancy Callout Box -->
+<div class="mt-2.5 p-2.5 rounded-lg bg-red-100/70 border border-red-200 text-xs">
+<div class="flex items-center gap-1.5 text-error font-extrabold">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+<span>Moisture Level: 1.8% (Allowed Max: 1.0%)</span>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-1">
+                    FFA is within acceptable limits (2.1%). Excess water sediment detected in lab centrifuge test (-0.8% variance).
+                  </p>
+</div>
+<!-- Action buttons -->
+<div class="mt-3 flex items-center gap-2">
+<button class="flex-1 h-9 rounded-xl bg-primary hover:bg-[#b85211] text-on-primary font-bold text-xs flex items-center justify-center gap-1 shadow active:scale-95 transition-all" onclick="applyDiscountPenalty('OL-4089')">
+<span class="material-symbols-outlined text-[16px]">percent</span>
+<span>Apply -8% Penalty</span>
+</button>
+<button class="h-9 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-error font-bold text-xs border border-red-200 active:scale-95 transition-all" onclick="rejectBatch('OL-4089')">
+                    Reject Batch
+                  </button>
+<button class="h-9 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-semibold transition-all" onclick="showToast('Lab Certificate #LC-9902 verified by QA Inspector Dr. Verma', 'verified')" title="View Lab Certificate">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+<!-- CLEARED ITEM: Batch #OL-4102 (Cleared) -->
+<div class="p-3.5 rounded-xl border border-emerald-200 bg-[#f7fbf8]">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-black text-xs text-on-surface">Batch #OL-4102</span>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-tertiary font-extrabold text-[10px] uppercase">QA Cleared</span>
+</div>
+<p class="text-xs font-semibold text-on-surface mt-0.5">BioEnergy Neemrana Terminal</p>
+<p class="text-[11px] text-on-surface-variant">Tanker T-09 • 2,100 kg Aggregated</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+</div>
+<div class="mt-2 grid grid-cols-2 gap-2 text-xs bg-white/70 p-2 rounded-lg border border-emerald-100">
+<div>
+<span class="text-[10px] text-on-surface-variant block uppercase font-bold">Field Aggregated</span>
+<span class="font-extrabold text-on-surface">2,100 kg</span>
+</div>
+<div>
+<span class="text-[10px] text-on-surface-variant block uppercase font-bold">Weighbridge</span>
+<span class="font-extrabold text-tertiary">2,090 kg (-0.47%)</span>
+</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-xs">
+<span class="text-[11px] font-semibold text-tertiary">Tolerance within 0.5% buffer</span>
+<button class="h-8 px-3 rounded-lg bg-tertiary hover:bg-[#1f522b] text-on-tertiary font-bold text-xs flex items-center gap-1 active:scale-95 transition-all" id="batch-btn-4102" onclick="approveBatch('OL-4102')">
+<span class="material-symbols-outlined text-[15px]">done_all</span>
+<span>Approve Inward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- INTELLIGENT ASSIGNMENT MODAL / SLIDE PANEL -->
+<div class="fixed inset-0 bg-[#28180c]/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" id="smart-assign-modal">
+<div class="bg-surface-container-lowest border border-[#eddcd2] rounded-3xl max-w-xl w-full shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="p-5 border-b border-[#eddcd2] bg-[#fffaf5] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">smart_toy</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-black uppercase tracking-wider text-primary">Algorithmic Recommendation Engine</span>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-tertiary">v2.4 Live</span>
+</div>
+<h3 class="text-base font-extrabold text-on-surface" id="modal-req-title">Assign Pickup: Haldiram's Chandni Chowk</h3>
+<p class="text-xs text-on-surface-variant" id="modal-req-subtitle">Request #RQ-9921 • Estimated Mass: 180 kg</p>
+</div>
+</div>
+<button class="p-1.5 rounded-xl hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="closeSmartAssignModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-5 overflow-y-auto custom-scrollbar space-y-4">
+<!-- Explanation Header -->
+<div class="p-3 rounded-xl bg-surface-container-low border border-[#eedfd6] text-xs text-on-surface">
+<span class="font-bold text-on-surface">Dispatch Objective:</span> Rank collectors by proximity, vehicle payload headroom, historical on-time SLA, and active FSSAI aggregator badge validity.
+        </div>
+<!-- RECOMMENDED COLLECTOR 1: Amit Kumar (96% Match) -->
+<div class="p-4 rounded-2xl border-2 border-primary bg-[#fffbf8] relative">
+<div class="absolute -top-2.5 right-4 bg-primary text-on-primary text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow">
+            Top Recommendation
+          </div>
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-primary/10 text-primary font-black text-sm flex items-center justify-center shrink-0">
+                AK
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-extrabold text-on-surface">Amit Kumar</h4>
+<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-tertiary font-bold text-[10px]">96% Match</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium">Van DL-1L-4491 • Mahindra Zor EV Cargo</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-black text-tertiary block">2.1 km away</span>
+<span class="text-[10px] text-on-surface-variant">Est. Arrival: 11 mins</span>
+</div>
+</div>
+<!-- Why recommended badges -->
+<div class="mt-3.5 grid grid-cols-2 gap-2 text-xs">
+<div class="p-2 rounded-xl bg-white border border-[#eedfd6] flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[16px]">battery_charging_full</span>
+<div>
+<span class="text-[10px] text-on-surface-variant block font-bold">Vehicle Payload Free</span>
+<span class="font-black text-on-surface">450 kg capacity</span>
+</div>
+</div>
+<div class="p-2 rounded-xl bg-white border border-[#eedfd6] flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[16px]">verified</span>
+<div>
+<span class="text-[10px] text-on-surface-variant block font-bold">FSSAI Field ID</span>
+<span class="font-black text-tertiary">Valid till 2026</span>
+</div>
+</div>
+<div class="p-2 rounded-xl bg-white border border-[#eedfd6] flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">speed</span>
+<div>
+<span class="text-[10px] text-on-surface-variant block font-bold">On-Time SLA Record</span>
+<span class="font-black text-on-surface">99.4% (312 jobs)</span>
+</div>
+</div>
+<div class="p-2 rounded-xl bg-white border border-[#eedfd6] flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[16px]">verified_user</span>
+<div>
+<span class="text-[10px] text-on-surface-variant block font-bold">Digital Scale Status</span>
+<span class="font-black text-on-surface">Calibrated 2d ago</span>
+</div>
+</div>
+</div>
+<button class="mt-3.5 w-full h-10 rounded-xl bg-primary hover:bg-[#b85211] text-on-primary font-extrabold text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition-all" onclick="confirmAssignment('Amit Kumar', 'DL-1L-4491')">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Assign Amit Kumar (Instant Push Alert)</span>
+</button>
+</div>
+<!-- ALTERNATIVE COLLECTOR 2: Manoj Verma (84% Match) -->
+<div class="p-3.5 rounded-xl border border-[#eddcd2] bg-surface-container-lowest">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container text-on-surface font-bold text-xs flex items-center justify-center">
+                MV
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-xs font-bold text-on-surface">Manoj Verma</h4>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold text-[10px]">84% Match</span>
+</div>
+<p class="text-[11px] text-on-surface-variant">Van DL-2C-1010 • 3.8 km away • 220 kg capacity</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-xs font-bold text-on-surface transition-colors" onclick="confirmAssignment('Manoj Verma', 'DL-2C-1010')">
+              Select
+            </button>
+</div>
+</div>
+<!-- WARNING ALTERNATIVE 3: Rahul Sharma (With Warning Flag) -->
+<div class="p-3.5 rounded-xl border border-amber-200 bg-amber-50/50">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 font-bold text-xs flex items-center justify-center shrink-0">
+                RS
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-xs font-bold text-on-surface">Rahul Sharma</h4>
+<span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-bold text-[10px]">68% Match</span>
+</div>
+<p class="text-[11px] text-on-surface-variant">E-Rickshaw • 1.1 km away</p>
+<div class="flex items-center gap-1 text-[11px] font-bold text-amber-800 mt-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>Capacity warning: Only 120 kg headroom left (Req is 180 kg)</span>
+</div>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 text-xs font-bold opacity-70 cursor-not-allowed" onclick="showToast('Cannot assign: Capacity overload warning', 'error')">
+              Over-Capacity
+            </button>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-4 border-t border-[#eddcd2] bg-surface-container-low flex items-center justify-between text-xs text-on-surface-variant">
+<span>Assignment transmits automated SMS &amp; App notification with turn-by-turn routing</span>
+<button class="px-3.5 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high font-bold text-on-surface" onclick="closeSmartAssignModal()">
+          Dismiss
+        </button>
+</div>
+</div>
+</div>
+<!-- OPERATIONAL FEEDBACK TOAST -->
+<div class="fixed bottom-6 right-6 bg-[#2a1a0e] text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transform transition-all duration-300 translate-y-24 opacity-0 pointer-events-none z-50 max-w-md border border-white/10" id="toast-notif">
+<span class="material-symbols-outlined text-primary text-[22px]" id="toast-icon">check_circle</span>
+<span class="text-xs font-bold flex-1" id="toast-message">Action executed successfully</span>
+<button class="text-white/60 hover:text-white" onclick="hideToast()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- JAVASCRIPT CONTROLLERS -->
+<script>
+    // Toast Notification Feedback System
+    let toastTimeout;
+    function showToast(msg, icon = 'check_circle') {
+      const toast = document.getElementById('toast-notif');
+      const msgEl = document.getElementById('toast-message');
+      const iconEl = document.getElementById('toast-icon');
+      if (!toast) return;
+
+      clearTimeout(toastTimeout);
+      msgEl.innerText = msg;
+      iconEl.innerText = icon;
+
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      toastTimeout = setTimeout(() => {
+        hideToast();
+      }, 3500);
+    }
+
+    function hideToast() {
+      const toast = document.getElementById('toast-notif');
+      if (toast) {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }
+    }
+
+    // Sidebar Collapsible Controller
+    let sidebarOpen = true;
+    function toggleSidebar() {
+      const sidebar = document.getElementById('main-sidebar');
+      const icon = document.getElementById('sidebar-toggle-icon');
+      const texts = document.querySelectorAll('.sidebar-text');
+      
+      sidebarOpen = !sidebarOpen;
+      if (sidebarOpen) {
+        sidebar.classList.remove('w-16');
+        sidebar.classList.add('w-64');
+        texts.forEach(el => el.classList.remove('hidden'));
+        icon.innerText = 'menu_open';
+      } else {
+        sidebar.classList.remove('w-64');
+        sidebar.classList.add('w-16');
+        texts.forEach(el => el.classList.add('hidden'));
+        icon.innerText = 'menu';
+      }
+    }
+
+    // Smart Assign Modal Handlers
+    let currentAssignReqId = '';
+    function openSmartAssignModal(reqId, generatorName, weight) {
+      currentAssignReqId = reqId;
+      document.getElementById('modal-req-title').innerText = `Assign Pickup: ${generatorName}`;
+      document.getElementById('modal-req-subtitle').innerText = `Request #${reqId} • Estimated Mass: ${weight}`;
+      document.getElementById('smart-assign-modal').classList.remove('hidden');
+    }
+
+    function closeSmartAssignModal() {
+      document.getElementById('smart-assign-modal').classList.add('hidden');
+    }
+
+    function confirmAssignment(collectorName, vehicleNo) {
+      closeSmartAssignModal();
+      showToast(`Assigned ${collectorName} (${vehicleNo}) to #${currentAssignReqId}. ETA dispatched.`, 'local_shipping');
+    }
+
+    // Escrow Payout Trigger
+    function instantReleasePayout(requestId) {
+      const btn = document.getElementById('payout-btn-9912');
+      if (btn) {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">done_all</span> Settled (₹6,050)`;
+        btn.classList.remove('bg-tertiary', 'hover:bg-[#1f522b]');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+        btn.disabled = true;
+      }
+      showToast(`₹6,050.00 released to Saravana Bhavan bank via instant nodal escrow rail.`, 'payments');
+    }
+
+    // Batch Inward Approvals
+    function approveBatch(batchId) {
+      const btn = document.getElementById('batch-btn-4102');
+      if (btn) {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[15px]">verified</span> Accepted`;
+        btn.classList.remove('bg-tertiary', 'hover:bg-[#1f522b]');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+        btn.disabled = true;
+      }
+      showToast(`Batch #${batchId} passed tolerance. 2,090 kg refinery intake certified.`, 'done_all');
+    }
+
+    // Penalty Apply Handler
+    function applyDiscountPenalty(batchId) {
+      showToast(`8% moisture deduction applied to Batch #${batchId}. Revised settlement generated.`, 'percent');
+    }
+
+    function rejectBatch(batchId) {
+      showToast(`Batch #${batchId} inward rejected. Sent back for secondary dehydration centrifuging.`, 'block');
+    }
+
+    // Filter Pickups Grid Tab Behavior
+    function filterPickups(category, btnElement) {
+      const tabs = document.querySelectorAll('.pickup-tab');
+      tabs.forEach(t => {
+        t.classList.remove('bg-primary', 'text-on-primary');
+        t.classList.add('bg-surface-container', 'text-on-surface');
+      });
+      btnElement.classList.add('bg-primary', 'text-on-primary');
+      btnElement.classList.remove('bg-surface-container', 'text-on-surface');
+
+      const rows = document.querySelectorAll('.pickup-row');
+      const emptyState = document.getElementById('empty-state');
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        if (category === 'all') {
+          row.style.display = 'block';
+          visibleCount++;
+        } else if (row.classList.contains(category)) {
+          row.style.display = 'block';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+    }
+
+    // Auto-dispatch helper
+    function autoAssignPending() {
+      showToast('AI Optimizing routes: 5 unassigned pickups matched to nearest field units.', 'auto_awesome');
+    }
+
+    // Sync Telemetry Helper
+    function refreshData() {
+      const icon = document.getElementById('refresh-icon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        showToast('Telemetry and GPS coordinates synchronized with 16 field units.', 'sync');
+      }, 800);
+    }
+  </script>
+</body></html>

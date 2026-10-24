@@ -1,0 +1,718 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#653e00", "background": "#fff8f5", "on-secondary": "#ffffff", "surface-variant": "#fcddc9", "on-primary-container": "#fffbff", "tertiary-fixed": "#aff3b5", "surface-tint": "#9f4200", "surface": "#fff8f5", "on-error": "#ffffff", "on-secondary-container": "#724700", "error": "#ba1a1a", "secondary-fixed-dim": "#ffb95e", "inverse-primary": "#ffb691", "surface-bright": "#fff8f5", "tertiary-fixed-dim": "#93d69a", "surface-container-low": "#fff1e9", "on-primary-fixed-variant": "#793100", "secondary": "#855300", "error-container": "#ffdad6", "tertiary-container": "#43824e", "primary-fixed-dim": "#ffb691", "on-tertiary-fixed": "#002109", "primary": "#9b4000", "on-primary-fixed": "#341100", "surface-container": "#ffeadd", "on-error-container": "#93000a", "outline": "#8b7266", "primary-fixed": "#ffdbcb", "on-tertiary-container": "#f7fff3", "inverse-surface": "#3f2d1f", "on-background": "#28180c", "surface-container-lowest": "#ffffff", "primary-container": "#c05407", "outline-variant": "#dec0b3", "on-tertiary-fixed-variant": "#0e5224", "surface-dim": "#f3d4c1", "on-tertiary": "#ffffff", "inverse-on-surface": "#ffede3", "tertiary": "#296838", "on-surface": "#28180c", "surface-container-highest": "#fcddc9", "on-primary": "#ffffff", "on-surface-variant": "#574238", "surface-container-high": "#ffe3d1", "secondary-container": "#fdb659", "on-secondary-fixed": "#2a1700", "secondary-fixed": "#ffddb7" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-lg": "1.5rem", "margin-desktop": "2.5rem", "space-sm": "0.5rem", "space-xl": "2rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-md": "1rem" }, "fontFamily": { "display-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "metric-headline": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "metric-sub": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "metric-headline": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "metric-sub": ["16px", { "lineHeight": "20px", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(42,26,14,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="OilLoop Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1X6-DwPD8v2DkO-jDkhd_J_uOTTBKMA3rZetzavLTBEdylZJ6DAEmuIz3rC2J34Qum2jWSbxvhNlgsNLdV7fDc0o2FtTuKxFSddAntynrHzv9SFPZ4N-yV0_fzu5qJJjsmZGgOIkgkFsiIWPpu13A_VH645OpuGT5iSNNAl2Dlckl6i2kAucC79vdYrYhrKFXolpy9K3yMQRdShf_w69eGW6qZqDfjEGI_6sQAdyNk"><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-lg text-label-lg text-on-surface truncate">OilLoop</span><span class="font-label-sm text-label-sm text-on-surface-variant">•</span><span class="font-label-sm text-label-sm text-primary uppercase font-bold truncate">Restaurant Hub</span></div><div class="flex items-center gap-1 mt-0.5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-sm text-label-sm text-tertiary truncate">Delhi NCR • Online</span></div></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><button aria-label="Switch role" class="h-11 px-2.5 rounded-lg bg-surface-container flex items-center gap-1.5 text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">swap_horiz</span><span class="font-label-sm text-label-sm text-on-surface font-semibold hidden xs:inline">Role</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full px-gutter pt-16 pb-24 bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Top Greeting & Restaurant Profile Hero Card -->
+<div class="w-full mb-2 px-2.5 py-1 bg-surface-container rounded-lg flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><div class="flex items-center gap-1.5 font-bold uppercase tracking-wider text-secondary"><span class="material-symbols-outlined text-[14px]">verified</span><span class="">DEMO DATA — ILLUSTRATIVE FIGURES</span></div><span class="text-[10px] opacity-75">FSSAI RUCO Safe Sandbox</span></div><section class="w-full mb-space-md">
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-primary/5 rounded-full pointer-events-none"></div>
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="material-symbols-outlined text-primary text-[18px]">storefront</span>
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase">Partner Outlet</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Royal Spice Kitchen</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Connaught Place, Block B, New Delhi</p>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+            RUCO Verified
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">#DEL-8821</span>
+</div>
+</div>
+<!-- Quick Bank & Rate Subtext -->
+<div class="mt-3 pt-3 bg-surface-container-lowest/80 rounded-lg p-2.5 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Today's Procurement: ₹55.00/kg</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+<span class="font-label-sm text-label-sm truncate">HDFC ****4920</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Tab Navigation -->
+<section class="w-full mb-space-md">
+<div class="flex p-1 bg-surface-container-high rounded-xl gap-1">
+<button class="flex-1 py-2.5 px-2 text-center rounded-lg font-label-md text-label-md transition-all bg-surface-container-lowest text-primary shadow-sm font-bold flex items-center justify-center gap-1" id="tab-btn-overview" onclick="switchTab('overview')">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span class="">Overview</span>
+</button>
+<button class="flex-1 py-2.5 px-2 text-center rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-1" id="tab-btn-schedule" onclick="switchTab('schedule')">
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+<span class="">Schedule</span>
+</button>
+<button class="flex-1 py-2.5 px-2 text-center rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-1" id="tab-btn-ledger" onclick="switchTab('ledger')"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="">Ledger &amp; Certs</span></button>
+</div>
+</section>
+<!-- TAB CONTENT 1: OVERVIEW -->
+<div class="flex flex-col w-full space-y-space-md" id="tab-content-overview">
+<!-- Key KPI Cards Grid (2x2) -->
+<section class="grid grid-cols-2 gap-space-sm w-full">
+<!-- KPI 1: Available UCO -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Available UCO</span>
+<span class="p-1 rounded-md bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">oil_barrel</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-headline text-metric-headline text-on-surface">145</span>
+<span class="font-metric-sub text-metric-sub text-primary">kg</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">~7 canisters ready</p>
+</div>
+</div>
+<!-- KPI 2: Est. Payout Ready -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Est. Payout</span>
+<span class="p-1 rounded-md bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-0.5">
+<span class="font-headline-lg text-headline-lg text-primary">₹7,975</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">@ ₹55/kg spot rate</p>
+</div>
+</div>
+<!-- KPI 3: Lifetime Diverted -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Diverted</span>
+<span class="p-1 rounded-md bg-tertiary/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">eco</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-headline text-metric-headline text-on-surface">3,840</span>
+<span class="font-metric-sub text-metric-sub text-tertiary">kg</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary font-semibold mt-0.5">₹2.11L total earned</p>
+</div>
+</div>
+<!-- KPI 4: RUCO Compliance -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Compliance</span>
+<span class="p-1 rounded-md bg-tertiary/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-tertiary">100%</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Green</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Zero black-market risk</p>
+</div>
+</div>
+</section>
+<!-- Prominent Primary Schedule Trigger -->
+<section class="w-full"><div class="w-full p-4 rounded-xl bg-gradient-to-t from-primary to-primary-container text-on-primary shadow-xl relative overflow-hidden"><div class="absolute -right-6 -bottom-6 w-32 h-32 bg-white/20 rounded-full pointer-events-none"></div><div class="flex items-center justify-between mb-2"><span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">⚡ Priority Dispatch Ready</span><span class="font-label-sm text-label-sm text-on-primary/80">~12 min arrival</span></div><div class="flex items-end justify-between mb-3.5"><div><h3 class="font-headline-md text-headline-md text-on-primary font-bold">Schedule Instant Pickup</h3><p class="font-body-sm text-body-sm text-on-primary/80">Sealed 20L bio-drum swap at kitchen door</p></div><div class="text-right bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-lg"><span class="font-label-sm text-label-sm text-on-primary/80 block uppercase">Est. Instant Payout</span><span class="font-headline-md text-headline-md text-on-primary font-extrabold">₹7,975</span></div></div><button class="w-full py-3.5 px-4 rounded-lg bg-surface text-primary font-label-lg text-label-lg font-bold shadow-md hover:bg-surface-bright active:scale-[0.98] transition-all flex items-center justify-center gap-2" onclick="toggleModal(true)"><span class="material-symbols-outlined text-[22px]">local_shipping</span><span class="">Dispatch EV Collector Now</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></section>
+<!-- Active Dispatch Live Tracker Card -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm"><div class="flex items-center justify-between mb-3"><div class="flex items-center gap-2"><span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span></span><span class="font-label-md text-label-md font-bold text-on-surface">Active Dispatch #OL-3102</span></div><div class="flex items-center gap-1.5"><span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span><span class="">ETA 11:40 AM (12 min)</span></span></div></div><div class="flex items-center justify-between bg-surface-container-low rounded-xl p-3 mb-4 border border-outline-variant/30"><div class="flex items-center gap-3 min-w-0"><div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0"><span class="material-symbols-outlined text-[24px]">electric_rickshaw</span></div><div class="min-w-0"><div class="flex items-center gap-1.5"><h4 class="font-label-md text-label-md font-bold text-on-surface truncate">Rajesh Kumar</h4><span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[10px] font-bold">Verified</span></div><p class="font-body-sm text-body-sm text-on-surface-variant truncate">EV Cargo Auto • DL-1L-8832</p></div></div><div class="flex items-center gap-2 flex-shrink-0"><a aria-label="Call Rajesh Kumar" class="h-9 px-3 rounded-lg bg-surface-container flex items-center gap-1 text-primary hover:bg-surface-container-high transition-colors font-label-sm text-label-sm font-bold" href="tel:+919876543210"><span class="material-symbols-outlined text-[16px]">call</span><span class="">Call</span></a><button aria-label="Live Map" class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-colors" onclick="toggleMapModal(true)"><span class="material-symbols-outlined text-[18px]">near_me</span></button></div></div><div class="w-full py-2"><div class="flex items-center justify-between relative"><div class="flex flex-col items-center z-10"><div class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center text-xs font-bold shadow-sm"><span class="material-symbols-outlined text-[16px]">check</span></div><span class="font-label-sm text-label-sm text-tertiary mt-1 font-semibold">Booked</span></div><div class="flex-1 h-0.5 bg-tertiary"></div><div class="flex flex-col items-center z-10"><div class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center text-xs font-bold shadow-sm"><span class="material-symbols-outlined text-[16px]">check</span></div><span class="font-label-sm text-label-sm text-tertiary mt-1 font-semibold">Assigned</span></div><div class="flex-1 h-0.5 bg-secondary"></div><div class="flex flex-col items-center z-10"><div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-xs font-bold shadow-sm ring-4 ring-secondary-container/40 animate-pulse"><span class="material-symbols-outlined text-[16px]">local_shipping</span></div><span class="font-label-sm text-label-sm text-secondary mt-1 font-bold">In Transit</span></div><div class="flex-1 h-0.5 bg-surface-variant"></div><div class="flex flex-col items-center z-10"><div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-xs font-bold"><span class="material-symbols-outlined text-[16px]">scale</span></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Weighed</span></div><div class="flex-1 h-0.5 bg-surface-variant"></div><div class="flex flex-col items-center z-10"><div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-xs font-bold"><span class="material-symbols-outlined text-[16px]">payments</span></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1">UPI Payout</span></div></div><div class="mt-3 pt-2.5 border-t border-surface-variant/40 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-[16px]">location_on</span><span class="">1.8 km away • Barakhamba Junction</span></span><span class="font-label-sm text-label-sm text-primary font-bold">DEMO DISPATCH</span></div></div></section>
+<!-- Visual Storytelling: Impact & Circular Economy Card -->
+<section class="w-full bg-surface-container rounded-xl p-space-md overflow-hidden relative shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[20px]">water_drop</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Your Green Footprint</span>
+</div>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-full font-bold">FSSAI Certified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">
+        Royal Spice Kitchen has prevented 9.6 million liters of municipal water contamination and contributed feedstock for 3,450L of Biodiesel (IS 15607).
+      </p>
+<div class="relative w-full h-32 rounded-lg overflow-hidden shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Warm sunlight shining on clean industrial biofuel refinery tanks with amber purified recycled cooking oil flowing into steel conduits, agricultural sustainability aesthetic with green leaves and earthy orange tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZuP9hzM8vHKnMjjQ2lO10eoNN7s148A2mFf_ooDZscCoNVUOWL-ABFxY0dIqNLJ9LpBHVFUbPCp-3qz91r6KeWE2UEtvQKC2_4pH8ScawmBhp4JkmS_GdTcX_L-mxvV7TiJ84TwhHz0GnoR7Gta_HKwcTBzZ6ed1nOWeijXTwJopiQRDGP7AqEaoy9ODvqgQ7xUNAIMDF9N2jp3i03zQUvwjnqPHayWzK9rvuIvo">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-2.5">
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">Aggregated with Bharat Petroleum Bio-Hub, Panipat</span>
+</div>
+</div>
+</section>
+</div>
+<!-- TAB CONTENT 2: SCHEDULE VIEW (INLINE ALTERNATIVE / SCHEDULING FLOW) -->
+<div class="hidden flex-col w-full space-y-space-md" id="tab-content-schedule">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">New Collection Order</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Request empty canister swaps and sealed bio-pickup.</p>
+<!-- Canister Slider -->
+<div class="mb-4">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Number of 20L Canisters:</span>
+<span class="font-headline-sm text-headline-sm text-primary" id="tab-canister-display">7 Canisters (~145 kg)</span>
+</div>
+<input class="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" id="tab-canister-slider" max="25" min="1" oninput="updateTabCalculation(this.value)" type="range" value="7">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mt-1">
+<span class="">Min: 1 Canister (20 kg)</span>
+<span class="">Max: 25 Canisters (500 kg)</span>
+</div>
+</div>
+<!-- Frequency Chips -->
+<div class="mb-4">
+<label class="font-label-md text-label-md text-on-surface font-semibold block mb-2">Collection Type</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="p-3 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-bold text-center" id="tab-freq-once" onclick="setTabFrequency('once')" type="button">
+            One-Time Spot Pickup
+          </button>
+<button class="p-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center" id="tab-freq-rec" onclick="setTabFrequency('recurring')" type="button">
+            Recurring (Tuesdays)
+          </button>
+</div>
+</div>
+<!-- Time Slot Selection -->
+<div class="mb-5">
+<label class="font-label-md text-label-md text-on-surface font-semibold block mb-2">Select Time Window</label>
+<div class="space-y-2">
+<label class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low cursor-pointer">
+<div class="flex items-center gap-2">
+<input checked="" class="accent-primary w-4 h-4" name="tab-slot" type="radio">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Today: 3:00 PM – 5:00 PM</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Fastest Slot</span>
+</label>
+<label class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low cursor-pointer">
+<div class="flex items-center gap-2">
+<input class="accent-primary w-4 h-4" name="tab-slot" type="radio">
+<span class="font-body-md text-body-md text-on-surface">Tomorrow Morning: 8:00 AM – 10:00 AM</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pre-Kitchen Opening</span>
+</label>
+</div>
+</div>
+<!-- Live Calculation Card -->
+<div class="bg-surface-container p-4 rounded-xl mb-5">
+<div class="flex justify-between items-center pb-2 mb-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Estimated Weight</span>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="tab-calc-weight">145.0 kg</span>
+</div>
+<div class="flex justify-between items-center pb-2 mb-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Government Compliant Rate</span>
+<span class="font-label-md text-label-md text-on-surface">₹55.00 / kg</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface block">Instant Bank Credit</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Direct IMPS to HDFC Bank ****4920</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-bold" id="tab-calc-total">₹7,975</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold shadow-md hover:bg-primary-container transition-all flex items-center justify-center gap-2" onclick="confirmBookingAlert()">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+        Confirm Schedule Request
+      </button>
+</div>
+</div>
+<!-- TAB CONTENT 3: LEDGER & CERTIFICATES -->
+<div class="hidden flex-col w-full space-y-space-md" id="tab-content-ledger">
+<!-- Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1">
+<button class="px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold flex-shrink-0" id="filter-all" onclick="filterLedger('all')">All Dispatches</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold flex-shrink-0" id="filter-completed" onclick="filterLedger('completed')">Completed (24)</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold flex-shrink-0" id="filter-transit" onclick="filterLedger('transit')">In Transit (1)</button>
+</div>
+<!-- Official RUCO Certification Notice Banner -->
+<div class="bg-surface-container p-3.5 rounded-xl shadow-sm">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0 mt-0.5">policy</span>
+<div class="min-w-0">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">FSSAI RUCO Compliance Certificate</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Auto-generated digital certificates for food safety audits &amp; municipal hygiene ratings.
+          </p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-container/40 text-on-secondary-fixed font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">info</span>
+            DEMO — NOT AN OFFICIAL COMPLIANCE CERTIFICATE
+          </div>
+</div>
+</div>
+</div>
+<!-- Collection Records -->
+<div class="space-y-space-sm" id="ledger-list">
+<!-- Record 1 (In Transit) -->
+<div class="ledger-item transit bg-surface-container-lowest p-4 rounded-xl shadow-sm">
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Batch #OL-3102</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-bold">In Transit</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Scheduled Today • Rajesh Kumar</p>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">~145 kg</span>
+</div>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="">Est. Payout: ₹7,975</span>
+<span class="text-secondary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+            Awaiting Scale Tare
+          </span>
+</div>
+</div>
+<!-- Record 2 (Completed) -->
+<div class="ledger-item completed bg-surface-container-lowest p-4 rounded-xl shadow-sm">
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Batch #OL-2941</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Settled</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">14 Oct 2024, 04:30 PM • 9 Canisters</p>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg font-bold text-on-surface block">182.0 kg</span>
+<span class="font-label-md text-label-md text-tertiary font-bold">₹10,010</span>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between font-body-sm text-body-sm">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="">Paid via UPI (Ref #0948123)</span>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1" onclick="previewCertificate('OL-2941', '182.0 kg', '₹10,010', '14 Oct 2024')">
+<span class="material-symbols-outlined text-[14px]">description</span>
+            View PDF
+          </button>
+</div>
+</div>
+<!-- Record 3 (Completed) -->
+<div class="ledger-item completed bg-surface-container-lowest p-4 rounded-xl shadow-sm">
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Batch #OL-2804</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Settled</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">07 Oct 2024, 05:15 PM • 7 Canisters</p>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg font-bold text-on-surface block">150.0 kg</span>
+<span class="font-label-md text-label-md text-tertiary font-bold">₹8,250</span>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between font-body-sm text-body-sm">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="">Paid via UPI (Ref #0881920)</span>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1" onclick="previewCertificate('OL-2804', '150.0 kg', '₹8,250', '07 Oct 2024')">
+<span class="material-symbols-outlined text-[14px]">description</span>
+            View PDF
+          </button>
+</div>
+</div>
+<!-- Record 4 (Completed) -->
+<div class="ledger-item completed bg-surface-container-lowest p-4 rounded-xl shadow-sm">
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Batch #OL-2679</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Settled</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">30 Sep 2024, 03:45 PM • 8 Canisters</p>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg font-bold text-on-surface block">160.5 kg</span>
+<span class="font-label-md text-label-md text-tertiary font-bold">₹8,827</span>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between font-body-sm text-body-sm">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="">Paid via UPI (Ref #0723911)</span>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1" onclick="previewCertificate('OL-2679', '160.5 kg', '₹8,827', '30 Sep 2024')">
+<span class="material-symbols-outlined text-[14px]">description</span>
+            View PDF
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE MODAL 1: MULTI-STEP BOOKING DRAWER -->
+<div class="fixed inset-0 z-50 hidden" id="booking-modal">
+<!-- Earthy Backdrop Overlay -->
+<div class="absolute inset-0 bg-inverse-surface/50 backdrop-blur-sm transition-opacity" onclick="toggleModal(false)"></div>
+<!-- Drawer Container -->
+<div class="absolute bottom-0 inset-x-0 max-w-lg mx-auto bg-surface-container-lowest rounded-t-3xl p-5 shadow-2xl flex flex-col max-h-[90vh] overflow-y-auto">
+<div class="w-12 h-1.5 bg-surface-variant rounded-full mx-auto mb-4 flex-shrink-0"></div>
+<div class="flex items-center justify-between mb-3 flex-shrink-0">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Schedule Instant UCO Pickup</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Royal Spice Kitchen • Cannaught Place</p>
+</div>
+<button aria-label="Close Modal" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high" onclick="toggleModal(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Step Wizard Indicator -->
+<div class="flex items-center justify-between mb-5 bg-surface-container-low p-2 rounded-xl">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">1</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Quantity</span>
+</div>
+<span class="material-symbols-outlined text-surface-variant text-[16px]">chevron_right</span>
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center font-bold">2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Slot</span>
+</div>
+<span class="material-symbols-outlined text-surface-variant text-[16px]">chevron_right</span>
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center font-bold">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Payout</span>
+</div>
+</div>
+<!-- Step 1: Canister count slider -->
+<div class="mb-4">
+<label class="font-label-md text-label-md text-on-surface font-bold block mb-1">Step 1: Canister Count</label>
+<div class="bg-surface-container-low p-3.5 rounded-xl">
+<div class="flex items-center justify-between mb-2">
+<span class="font-body-md text-body-md text-on-surface">Available Standard Cans:</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="modal-canister-display">7 Canisters (~145 kg)</span>
+</div>
+<input class="w-full h-2.5 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" id="modal-canister-slider" max="25" min="1" oninput="updateModalCalculation(this.value)" type="range" value="7">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mt-1.5">
+<span class="">20 kg (Single can)</span>
+<span class="">300 kg (Mid Depot)</span>
+<span class="">500 kg (Bulk)</span>
+</div>
+</div>
+</div>
+<!-- Step 2: Frequency Selector -->
+<div class="mb-4">
+<label class="font-label-md text-label-md text-on-surface font-bold block mb-1">Step 2: Collection Frequency</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="p-3 rounded-xl bg-surface-container text-primary font-label-md text-label-md font-bold text-center" id="modal-freq-once" onclick="setModalFreq('once')" type="button">
+            One-Time Spot
+          </button>
+<button class="p-3 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center" id="modal-freq-rec" onclick="setModalFreq('rec')" type="button">
+            Weekly (Every Tue)
+          </button>
+</div>
+</div>
+<!-- Step 3: Preferred Slot -->
+<div class="mb-4">
+<label class="font-label-md text-label-md text-on-surface font-bold block mb-1">Step 3: Preferred Dispatch Slot</label>
+<div class="space-y-2">
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Today, 3:00 PM – 5:00 PM</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">EV Auto fleet nearby</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Recommended</span>
+</div>
+</div>
+</div>
+<!-- Live Payout & Bank Info -->
+<div class="bg-surface-container rounded-xl p-3.5 mb-5">
+<div class="flex items-center justify-between text-on-surface mb-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Procurement Calculation:</span>
+<span class="font-label-sm text-label-sm font-semibold" id="modal-calc-math">145 kg × ₹55.00/kg</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface block">Est. Instant Payout</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">To HDFC Bank ****4920</span>
+</div>
+<span class="font-metric-headline text-metric-headline text-primary font-bold" id="modal-calc-total">₹7,975</span>
+</div>
+</div>
+<!-- Submit Action -->
+<button class="w-full py-4 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold shadow-md hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-2" onclick="submitPickupRequest()">
+<span class="material-symbols-outlined text-[20px]">send</span>
+        Confirm &amp; Dispatch Collector
+      </button>
+</div>
+</div>
+<!-- INTERACTIVE MODAL 2: LIVE MAP LOCATION VIEW -->
+<div class="fixed inset-0 z-50 hidden" id="map-modal">
+<div class="absolute inset-0 bg-inverse-surface/50 backdrop-blur-sm transition-opacity" onclick="toggleMapModal(false)"></div>
+<div class="absolute bottom-0 inset-x-0 max-w-lg mx-auto bg-surface-container-lowest rounded-t-3xl p-5 shadow-2xl flex flex-col">
+<div class="w-12 h-1.5 bg-surface-variant rounded-full mx-auto mb-4"></div>
+<div class="flex items-center justify-between mb-3">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Collector Live Route</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rajesh Kumar • DL-1L-8832</p>
+</div>
+<button aria-label="Close Map" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high" onclick="toggleMapModal(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Location Map Trigger Container -->
+<div class="w-full h-56 bg-cover bg-center rounded-xl overflow-hidden relative shadow-inner mb-3" data-location="Connaught Place, New Delhi, India">
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">ETA: 12 mins (1.8 km)</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low p-3 rounded-xl mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">pin_drop</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Drop location: Kitchen rear gate #3</span>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center gap-1" href="tel:+919876543210">
+<span class="material-symbols-outlined text-[16px]">call</span>
+          Call
+        </a>
+</div>
+<button class="w-full py-3 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high" onclick="toggleMapModal(false)">
+        Back to Dashboard
+      </button>
+</div>
+</div>
+<!-- INTERACTIVE MODAL 3: CERTIFICATE PDF PREVIEW -->
+<div class="fixed inset-0 z-50 hidden" id="cert-modal">
+<div class="absolute inset-0 bg-inverse-surface/50 backdrop-blur-sm transition-opacity" onclick="toggleCertModal(false)"></div>
+<div class="absolute bottom-0 inset-x-0 max-w-lg mx-auto bg-surface-container-lowest rounded-t-3xl p-5 shadow-2xl flex flex-col max-h-[90vh] overflow-y-auto">
+<div class="w-12 h-1.5 bg-surface-variant rounded-full mx-auto mb-3"></div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[24px]">verified</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">RUCO Trace Certificate</h3>
+</div>
+<button aria-label="Close Certificate" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high" onclick="toggleCertModal(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Watermark Demo Card -->
+<div class="bg-surface-container-low rounded-xl p-4 relative overflow-hidden mb-4 shadow-inner">
+<!-- Visual Watermark Stamp -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
+<span class="font-display-lg text-display-lg-mobile text-on-surface rotate-[-30deg] font-extrabold uppercase">RUCO DEMO</span>
+</div>
+<div class="flex justify-between items-start mb-3 pb-2">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">OilLoop Clean Tech Supply Chain</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="cert-batch-id">Batch #OL-2941</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="cert-date">14 Oct 2024</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Passed TPM &lt; 25%</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-left mb-3">
+<div class="bg-surface-container-lowest p-2 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Kitchen Unit</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Royal Spice Kitchen</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">FSSAI RUCO ID</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">DEL-8821</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Certified Weight</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="cert-weight">182.0 kg</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Settlement Value</span>
+<span class="font-label-md text-label-md text-primary font-semibold" id="cert-payout">₹10,010</span>
+</div>
+</div>
+<div class="bg-tertiary-fixed/30 p-2.5 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface">Cryptographically stamped on OilLoop Hyperledger Consortium.</span>
+</div>
+</div>
+<!-- Demo Disclaimer Alert -->
+<div class="p-3 bg-surface-container rounded-xl mb-4 text-center">
+<span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-wider block">
+          DEMO — NOT AN OFFICIAL COMPLIANCE CERTIFICATE
+        </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 block">
+          Produced for partner verification testing under FSSAI Order 2018/RUCO-V1.
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-3 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md font-bold" onclick="toggleCertModal(false)">
+          Close
+        </button>
+<button class="py-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 shadow-md" onclick="downloadFakePdf()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+          Download PDF
+        </button>
+</div>
+</div>
+</div>
+<!-- DEMO CONFIRMATION TOAST -->
+<div class="fixed top-20 inset-x-4 max-w-sm mx-auto z-50 bg-inverse-surface text-inverse-on-surface p-3.5 rounded-xl shadow-xl hidden transition-all flex items-center gap-3" id="toast">
+<span class="material-symbols-outlined text-tertiary-fixed text-[24px]">check_circle</span>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md font-bold truncate" id="toast-title">Collection Scheduled!</p>
+<p class="font-body-sm text-body-sm text-inverse-on-surface/80 truncate" id="toast-desc">EV Cargo DL-1L-8832 dispatched.</p>
+</div>
+</div>
+</div>
+<script>
+  // Tab Switching Functionality
+  function switchTab(tabKey) {
+    const tabs = ['overview', 'schedule', 'ledger'];
+    tabs.forEach(t => {
+      const content = document.getElementById('tab-content-' + t);
+      const btn = document.getElementById('tab-btn-' + t);
+      if (t === tabKey) {
+        content.classList.remove('hidden');
+        content.classList.add('flex');
+        btn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-bold');
+        btn.classList.remove('text-on-surface-variant');
+      } else {
+        content.classList.add('hidden');
+        content.classList.remove('flex');
+        btn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-bold');
+        btn.classList.add('text-on-surface-variant');
+      }
+    });
+  }
+
+  // Frequency Toggles (Modal & Tab)
+  function setModalFreq(type) {
+    const once = document.getElementById('modal-freq-once');
+    const rec = document.getElementById('modal-freq-rec');
+    if (type === 'once') {
+      once.className = "p-3 rounded-xl bg-surface-container text-primary font-label-md text-label-md font-bold text-center";
+      rec.className = "p-3 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center";
+    } else {
+      rec.className = "p-3 rounded-xl bg-surface-container text-primary font-label-md text-label-md font-bold text-center";
+      once.className = "p-3 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center";
+    }
+  }
+
+  function setTabFrequency(type) {
+    const once = document.getElementById('tab-freq-once');
+    const rec = document.getElementById('tab-freq-rec');
+    if (type === 'once') {
+      once.className = "p-3 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-bold text-center";
+      rec.className = "p-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center";
+    } else {
+      rec.className = "p-3 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-bold text-center";
+      once.className = "p-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md text-center";
+    }
+  }
+
+  // Calculators
+  function updateModalCalculation(val) {
+    const cans = parseInt(val, 10);
+    const kg = cans * 20.7; // ~20.7 kg per standard filled 20L canister
+    const roundedKg = Math.round(kg);
+    const payout = Math.round(roundedKg * 55);
+    document.getElementById('modal-canister-display').innerText = cans + ' Canisters (~' + roundedKg + ' kg)';
+    document.getElementById('modal-calc-math').innerText = roundedKg + ' kg × ₹55.00/kg';
+    document.getElementById('modal-calc-total').innerText = '₹' + payout.toLocaleString('en-IN');
+  }
+
+  function updateTabCalculation(val) {
+    const cans = parseInt(val, 10);
+    const kg = cans * 20.7;
+    const roundedKg = Math.round(kg);
+    const payout = Math.round(roundedKg * 55);
+    document.getElementById('tab-canister-display').innerText = cans + ' Canisters (~' + roundedKg + ' kg)';
+    document.getElementById('tab-calc-weight').innerText = roundedKg + '.0 kg';
+    document.getElementById('tab-calc-total').innerText = '₹' + payout.toLocaleString('en-IN');
+  }
+
+  // Modals Visibility
+  function toggleModal(open) {
+    const m = document.getElementById('booking-modal');
+    if (open) {
+      m.classList.remove('hidden');
+    } else {
+      m.classList.add('hidden');
+    }
+  }
+
+  function toggleMapModal(open) {
+    const m = document.getElementById('map-modal');
+    if (open) {
+      m.classList.remove('hidden');
+    } else {
+      m.classList.add('hidden');
+    }
+  }
+
+  function toggleCertModal(open) {
+    const m = document.getElementById('cert-modal');
+    if (open) {
+      m.classList.remove('hidden');
+    } else {
+      m.classList.add('hidden');
+    }
+  }
+
+  // Preview Certificate Data Filler
+  function previewCertificate(batch, weight, payout, date) {
+    document.getElementById('cert-batch-id').innerText = 'Batch #' + batch;
+    document.getElementById('cert-weight').innerText = weight;
+    document.getElementById('cert-payout').innerText = payout;
+    document.getElementById('cert-date').innerText = date;
+    toggleCertModal(true);
+  }
+
+  function downloadFakePdf() {
+    showToast('Certificate Downloaded', 'Saved to your device storage as PDF.');
+    toggleCertModal(false);
+  }
+
+  // Booking Submit
+  function submitPickupRequest() {
+    toggleModal(false);
+    showToast('Pickup Scheduled!', 'Collector Rajesh Kumar assigned for today 3:00 PM.');
+  }
+
+  function confirmBookingAlert() {
+    showToast('Schedule Confirmed!', 'Collector dispatched to Connaught Place.');
+    switchTab('overview');
+  }
+
+  // Filter Ledger items
+  function filterLedger(type) {
+    const items = document.querySelectorAll('.ledger-item');
+    const allBtn = document.getElementById('filter-all');
+    const compBtn = document.getElementById('filter-completed');
+    const transBtn = document.getElementById('filter-transit');
+
+    // Reset styles
+    [allBtn, compBtn, transBtn].forEach(b => {
+      b.className = "px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold flex-shrink-0";
+    });
+
+    if (type === 'all') {
+      allBtn.className = "px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold flex-shrink-0";
+      items.forEach(el => el.classList.remove('hidden'));
+    } else if (type === 'completed') {
+      compBtn.className = "px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold flex-shrink-0";
+      items.forEach(el => {
+        if (el.classList.contains('completed')) el.classList.remove('hidden');
+        else el.classList.add('hidden');
+      });
+    } else if (type === 'transit') {
+      transBtn.className = "px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold flex-shrink-0";
+      items.forEach(el => {
+        if (el.classList.contains('transit')) el.classList.remove('hidden');
+        else el.classList.add('hidden');
+      });
+    }
+  }
+
+  // Toast Notification helper
+  function showToast(title, desc) {
+    const t = document.getElementById('toast');
+    document.getElementById('toast-title').innerText = title;
+    document.getElementById('toast-desc').innerText = desc;
+    t.classList.remove('hidden');
+    setTimeout(() => {
+      t.classList.add('hidden');
+    }, 3800);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(42,26,14,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-1"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="home-landing" href="#"><span class="material-symbols-outlined text-[22px]">local_gas_station</span><span class="font-label-sm text-label-sm">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors gap-0.5 text-primary font-bold" data-path="restaurant-hub" href="#"><span class="material-symbols-outlined text-[22px]">restaurant</span><span class="font-label-sm text-label-sm">Hub</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="collector-route" href="#"><span class="material-symbols-outlined text-[22px]">route</span><span class="font-label-sm text-label-sm">Route</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="batch-trace" href="#"><span class="material-symbols-outlined text-[22px]">qr_code_scanner</span><span class="font-label-sm text-label-sm">Trace</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="operations-admin" href="#"><span class="material-symbols-outlined text-[22px]">admin_panel_settings</span><span class="font-label-sm text-label-sm">Ops</span></a></div></nav>
+
+</body></html>

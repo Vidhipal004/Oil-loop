@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff8f1" />
+  <title>OilLoop · Collection &amp; Traceability</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+    :root{font-family:'DM Sans',system-ui,sans-serif;color:#2a1a0e;background:#fff8f1;--orange:#d4621a;--muted:#806d60;--line:#efe4d6}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 10% 0%,#ffead8 0,transparent 40%),#fff8f1}.wrap{max-width:1080px;margin:0 auto;padding:30px 22px 50px}.brand{display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:23px;font-weight:800}.mark{width:40px;height:40px;background:var(--orange);color:white;border-radius:13px;display:grid;place-items:center}.brand b{color:var(--orange)}.tag{font-size:10px;letter-spacing:1.4px;color:#9a806d;font-weight:800;margin-top:4px}.hero{padding:65px 0 30px;max-width:700px}.eyebrow{font-size:10px;font-weight:800;letter-spacing:1.8px;color:#b35a20}.hero h1{font:800 clamp(35px,5vw,56px)/1.08 'Plus Jakarta Sans',sans-serif;letter-spacing:-2px;margin:14px 0}.hero h1 span{color:var(--orange)}.hero p{font-size:15px;line-height:1.7;color:var(--muted);max-width:590px}.note{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid #f0ddc9;background:#fff5e9;color:#99501d;border-radius:8px;font-size:11px;font-weight:700;margin-top:8px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}.card{background:#fffdfb;border:1px solid var(--line);border-radius:17px;padding:22px;box-shadow:0 8px 25px #432a1608;display:flex;flex-direction:column;min-height:260px}.icon{width:46px;height:46px;border-radius:13px;background:#fff0e4;color:var(--orange);display:grid;place-items:center;font-size:22px}.card h2{font:700 18px 'Plus Jakarta Sans',sans-serif;margin:19px 0 8px}.card p{font-size:12px;line-height:1.7;color:var(--muted);margin:0 0 20px;flex:1}.card button{border:0;border-radius:9px;background:var(--orange);color:white;font:700 12px 'DM Sans',sans-serif;padding:13px;cursor:pointer}.card button:hover{background:#aa4b0e;color:#fff}.card .secondary{background:#fff0e4;color:#a44a0c}.card .secondary:hover{background:#a44b0e;color:#fff;border-color:#a44b0e}.card button:focus-visible{outline:3px solid #f4b183;outline-offset:3px}.footer{font-size:10px;color:#9b8674;line-height:1.6;margin-top:25px}@media(max-width:760px){.hero{padding-top:42px}.cards{grid-template-columns:1fr}.card{min-height:220px}.wrap{padding:22px 16px 35px}}
+
+    /* Strong contrast fix for portal buttons in all interactive states */
+    .card button,
+    .card button:link,
+    .card button:visited { color: #ffffff !important; }
+    .card button.secondary { background: #fff0e4 !important; color: #a44a0c !important; }
+    .card button.secondary:hover,
+    .card button.secondary:focus,
+    .card button.secondary:focus-visible,
+    .card button.secondary:active { background: #a44b0e !important; color: #ffffff !important; border-color: #a44b0e !important; }
+    .card button:not(.secondary):hover,
+    .card button:not(.secondary):focus,
+    .card button:not(.secondary):active { background: #aa4b0e !important; color: #ffffff !important; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand"><div class="mark">↻</div><div>OilLoop<b>.</b><div class="tag">USED COOKING OIL · TRACEABILITY</div></div></div>
+    <section class="hero"><h1>Waste oil. <span>Worth more.</span><br>Every litre traceable.</h1><p>Explore how OilLoop connects restaurants, collection teams and biodiesel processors in one transparent used cooking oil recovery workflow.</p></section>
+    <section class="cards" aria-label="Choose a demo role">
+      <article class="card"><div class="icon">▦</div><h2>Company Admin</h2><p>Manage restaurant partners, approve onboarding, schedule collections, record quality checks and follow each batch through the traceability workflow.</p><button onclick="enterDemo('admin')">Enter admin dashboard →</button></article>
+      <article class="card"><div class="icon">⌂</div><h2>Restaurant Portal</h2><p>Register interest, request a pickup, choose a collection slot and follow the status of used cooking oil collection.</p><button class="secondary" onclick="enterDemo('restaurant')">Enter restaurant portal →</button></article>
+      <article class="card"><div class="icon">⇢</div><h2>Collector App</h2><p>View assigned collection tasks, mark arrival, record collected litres and create a traceable batch ID at pickup.</p><button class="secondary" onclick="enterDemo('collector')">Enter collector app →</button></article>
+    </section>
+    <div class="footer">This is a hackathon prototype with sample data. Login is intentionally simulated. No real authentication, GPS, payment, regulatory portal or official compliance certificate is connected.</div>
+  </main>
+  <script>
+    function enterDemo(role){sessionStorage.setItem('oilloop-demo-role',role);if(role==='admin'){window.location.href='/dashboard.html'}else{window.location.href='/portal.html?role='+encodeURIComponent(role)}}
+  </script>
+</body>
+</html>
